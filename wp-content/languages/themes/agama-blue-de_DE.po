@@ -1,0 +1,72 @@
+# Translation of Themes - Agama Blue in German
+# This file is distributed under the same license as the Themes - Agama Blue package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2018-09-26 11:48:31+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: de\n"
+"Project-Id-Version: Themes - Agama Blue\n"
+
+#. Description of the plugin/theme
+msgid "Agama Blue is child theme of Agama. Check demo: http://demo.theme-vision.com/"
+msgstr "Agama Blue ist ein Child-Theme von Agama. Demo ansehen: http://demo.theme-vision.com/"
+
+#. Theme Name of the plugin/theme
+msgid "Agama Blue"
+msgstr "Agama Blue"
+
+#: index.php:64
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Neuere Beiträge <span class=\"meta-nav\">&rarr;</span>"
+
+#: index.php:61
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Ältere Beiträge"
+
+#: index.php:59
+msgid "Post navigation"
+msgstr "Artikel-Navigation"
+
+#: includes/customizer.php:45
+msgid "Set blog section heading title."
+msgstr "Blogbereich-Titel festlegen."
+
+#: includes/customizer.php:44
+msgid "Heading Title"
+msgstr "Titel"
+
+#: includes/customizer.php:36
+msgid "Enable"
+msgstr "Aktivieren"
+
+#: includes/customizer.php:49 index.php:24
+msgid "Latest from the Blog"
+msgstr "Aktuelles vom Blog"
+
+#: includes/customizer.php:37
+msgid "Enable blog section on home page."
+msgstr "Blogbereich auf der Startseite aktivieren."
+
+#: includes/customizer.php:32
+msgid "Blog"
+msgstr "Blog"
+
+#: includes/customizer.php:28
+msgid "Agama Blue Options"
+msgstr "Agama Blue Optionen"
+
+#. Author of the plugin/theme
+msgid "ThemeVision"
+msgstr "ThemeVision"
+
+#. Author URI of the plugin/theme
+msgid "http://www.theme-vision.com/"
+msgstr "http://www.theme-vision.com/"
+
+#. Theme URI of the plugin/theme
+msgid "http://www.theme-vision.com/agama-blue/"
+msgstr "http://www.theme-vision.com/agama-blue/"

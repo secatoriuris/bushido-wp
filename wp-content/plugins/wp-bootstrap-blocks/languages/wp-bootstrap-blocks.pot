@@ -1,0 +1,307 @@
+# Copyright (C) 2020 Liip AG
+# This file is distributed under the same license as the Bootstrap Blocks plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Bootstrap Blocks 2.4.2\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-bootstrap-blocks\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-08-30T08:17:45+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+"X-Domain: wp-bootstrap-blocks\n"
+
+#. Plugin Name of the plugin
+#: src/class-wp-bootstrap-blocks.php:208
+msgid "Bootstrap Blocks"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://github.com/liip/bootstrap-blocks-wordpress-plugin"
+msgstr ""
+
+#. Description of the plugin
+msgid "Bootstrap 4 Gutenberg Blocks for WordPress."
+msgstr ""
+
+#. Author of the plugin
+msgid "Liip AG"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://liip.ch"
+msgstr ""
+
+#: src/class-wp-bootstrap-blocks.php:258
+#: src/class-wp-bootstrap-blocks.php:265
+msgid "Cheatin&#8217; huh?"
+msgstr ""
+
+#. translators: %s template
+#: src/wp-bootstrap-blocks-functions.php:24
+msgid "%s does not exist."
+msgstr ""
+
+#: build/index.js:607
+#: build/index.js:620
+msgid "Button"
+msgstr ""
+
+#: build/index.js:620
+msgid "Bootstrap Button"
+msgstr ""
+
+#: build/index.js:620
+#: build/index.js:826
+#: build/index.js:1207
+#: build/index.js:1532
+msgid "Bootstrap"
+msgstr ""
+
+#: build/index.js:715
+msgid "Primary"
+msgstr ""
+
+#: build/index.js:718
+msgid "Secondary"
+msgstr ""
+
+#: build/index.js:727
+msgid "Add text..."
+msgstr ""
+
+#: build/index.js:737
+msgid "Style"
+msgstr ""
+
+#: build/index.js:747
+msgid "Change button alignment"
+msgstr ""
+
+#: build/index.js:769
+msgid "Apply"
+msgstr ""
+
+#: build/index.js:820
+#: build/index.js:826
+msgid "Column"
+msgstr ""
+
+#: build/index.js:826
+msgid "Bootstrap Column"
+msgstr ""
+
+#: build/index.js:970
+#: build/index.js:1287
+msgid "None"
+msgstr ""
+
+#: build/index.js:973
+#: build/index.js:1276
+msgid "Small"
+msgstr ""
+
+#: build/index.js:976
+#: build/index.js:1279
+msgid "Medium"
+msgstr ""
+
+#: build/index.js:979
+#: build/index.js:1282
+msgid "Large"
+msgstr ""
+
+#: build/index.js:1024
+msgid "Column size"
+msgstr ""
+
+#: build/index.js:1027
+msgid "Xs Column count"
+msgstr ""
+
+#: build/index.js:1033
+msgid "Xs equal-width"
+msgstr ""
+
+#: build/index.js:1041
+msgid "Sm Column count"
+msgstr ""
+
+#: build/index.js:1047
+msgid "Sm equal-width"
+msgstr ""
+
+#: build/index.js:1055
+msgid "Md Column count"
+msgstr ""
+
+#: build/index.js:1061
+msgid "Md equal-width"
+msgstr ""
+
+#: build/index.js:1069
+msgid "Lg Column count"
+msgstr ""
+
+#: build/index.js:1075
+msgid "Lg equal-width"
+msgstr ""
+
+#: build/index.js:1083
+msgid "Xl Column count"
+msgstr ""
+
+#: build/index.js:1089
+msgid "Xl equal-width"
+msgstr ""
+
+#: build/index.js:1097
+msgid "Background color"
+msgstr ""
+
+#: build/index.js:1123
+msgid "Center content vertically in row"
+msgstr ""
+
+#: build/index.js:1130
+msgid "This setting only applies if there is no vertical alignment set on the parent row block."
+msgstr ""
+
+#: build/index.js:1132
+msgid "Padding (inside column)"
+msgstr ""
+
+#: build/index.js:1135
+msgid "Size"
+msgstr ""
+
+#: build/index.js:1201
+#: build/index.js:1207
+msgid "Container"
+msgstr ""
+
+#: build/index.js:1207
+msgid "Bootstrap Container"
+msgstr ""
+
+#: build/index.js:1291
+msgid "No breakpoint selected"
+msgstr ""
+
+#: build/index.js:1294
+msgid "Xl"
+msgstr ""
+
+#: build/index.js:1297
+msgid "Lg"
+msgstr ""
+
+#: build/index.js:1300
+msgid "Md"
+msgstr ""
+
+#: build/index.js:1303
+msgid "Sm"
+msgstr ""
+
+#: build/index.js:1330
+#: build/index.js:1332
+msgid "Fluid"
+msgstr ""
+
+#: build/index.js:1340
+msgid "Fluid Breakpoint"
+msgstr ""
+
+#: build/index.js:1349
+msgid "Fluid breakpoints only work with Bootstrap v4.4+. The container will be 100% wide until the specified breakpoint is reached, after which max-widths for each of the higher breakpoints will be applied."
+msgstr ""
+
+#: build/index.js:1351
+msgid "Margin"
+msgstr ""
+
+#: build/index.js:1353
+msgid "Margin After"
+msgstr ""
+
+#: build/index.js:1526
+#: build/index.js:1532
+msgid "Row"
+msgstr ""
+
+#: build/index.js:1532
+msgid "Bootstrap Row"
+msgstr ""
+
+#: build/index.js:1628
+msgid "2 Columns (1:1)"
+msgstr ""
+
+#: build/index.js:1647
+msgid "2 Columns (1:2)"
+msgstr ""
+
+#: build/index.js:1666
+msgid "2 Columns (2:1)"
+msgstr ""
+
+#: build/index.js:1685
+msgid "3 Columns (1:1:1)"
+msgstr ""
+
+#: build/index.js:1711
+msgid "Custom"
+msgstr ""
+
+#: build/index.js:1779
+msgid "Align columns left"
+msgstr ""
+
+#: build/index.js:1783
+#: build/index.js:1796
+msgid "Align columns center"
+msgstr ""
+
+#: build/index.js:1787
+msgid "Align columns right"
+msgstr ""
+
+#: build/index.js:1792
+msgid "Align columns top"
+msgstr ""
+
+#: build/index.js:1800
+msgid "Align columns bottom"
+msgstr ""
+
+#: build/index.js:1804
+msgid "Editor: Display columns stacked"
+msgstr ""
+
+#: build/index.js:1805
+msgid "Displays stacked columns in editor to enhance readability of block content. This option is only used in the editor and won't affect the output of the row."
+msgstr ""
+
+#: build/index.js:1813
+msgid "Change layout"
+msgstr ""
+
+#: build/index.js:1832
+msgid "Row options"
+msgstr ""
+
+#: build/index.js:1834
+msgid "No Gutters"
+msgstr ""
+
+#: build/index.js:1843
+msgid "Change horizontal alignment of columns"
+msgstr ""
+
+#: build/index.js:1852
+msgid "Change vertical alignment of columns"
+msgstr ""

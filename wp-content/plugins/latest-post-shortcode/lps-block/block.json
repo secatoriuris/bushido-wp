@@ -1,0 +1,14 @@
+{
+	"name": "latest-post-shortcode/lps-block",
+	"category": "widgets",
+	"attributes": {
+		"blockName": {
+			"type": "string",
+			"default": "latest-post-shortcode/lps-block"
+		},
+		"lpsContent": {
+			"type": "string",
+			"default": "[latest-selected-content limit=\"4\" display=\"title\" titletag=\"b\" url=\"yes\" image=\"thumbnail\" elements=\"3\" css=\"four-columns align-left as-overlay tall dark hover-zoom\" type=\"post\" status=\"publish\" orderby=\"dateD\"]"
+		}
+	}
+}

@@ -1,0 +1,60 @@
+# Translation of Themes - Winter Solstice in German
+# This file is distributed under the same license as the Themes - Winter Solstice package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2018-02-03 17:20:44+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: de\n"
+"Project-Id-Version: Themes - Winter Solstice\n"
+
+#. Description of the plugin/theme
+msgid "Winter Solstice is a holiday season child theme using the parent theme Twenty Seventeen. This responsive WordPress child theme inherits all Twenty Seventeen theme features and functionalities, including multiple sections on the front page, widgets, social menus, custom-header, logo upload, custom color, WooCommerce compatible, and more. This Twenty Seventeen child theme can be used on e-commerce sites. Should most likely integrate with WooCommerce, the most popular WordPress e-commerce plugin."
+msgstr "Winter Solstice ist ein Child-Theme für die Ferienzeit, das Eltern-Theme Twenty Seventeen verwendet. Dieses responsive Child-Theme erbt alle Twenty Seventeen Theme Features und Funktionen, einschließlich mehrerer Abschnitte auf der Startseite, Widgets, Social-Media-Menüs, eigener Header, Logo-Upload, individuelle Farbe, WooCommerce kompatibel und vieles mehr. Dieses Theme kann auf E-Commerce-Sites verwendet werden. Es sollte höchstwahrscheinlich mit WooCommerce, dem populären WordPress E-Commerce Plugin, integrationsfähig sein."
+
+#. Theme Name of the plugin/theme
+msgid "Winter Solstice"
+msgstr "Winter Solstice"
+
+#: template-parts/footer/site-info.php:3
+msgid "Copyright &#169; "
+msgstr "Copyright &#169; "
+
+#: functions.php:73
+msgid "by %s"
+msgstr "von %s"
+
+#: functions.php:72
+msgid "WordPress Theme"
+msgstr "WordPress-Theme"
+
+#: template-parts/navigation/navigation-top.php:8
+msgid "Top Menu"
+msgstr "Top Menü"
+
+#: template-parts/header/site-branding.php:32
+msgid "Scroll down to content"
+msgstr "Zum Inhalt runterscollen"
+
+#: header.php:23
+msgid "Skip to content"
+msgstr "Weiter zum Inhalt"
+
+#: functions.php:55
+msgid "Default Header Image"
+msgstr "Standard Header-Bild"
+
+#. Theme URI of the plugin/theme
+msgid "https://sumowp.com/twenty-seventeen-child-theme"
+msgstr "https://sumowp.com/twenty-seventeen-child-theme"
+
+#. Author URI of the plugin/theme
+msgid "https://sumowp.com"
+msgstr "https://sumowp.com"
+
+#. Author of the plugin/theme
+msgid "sumowp.com"
+msgstr "sumowp.com"
