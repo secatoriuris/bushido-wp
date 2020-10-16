@@ -2,297 +2,1247 @@
 # This file is distributed under the same license as the Plugins - MetaSlider - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-09-23 17:39:12+0000\n"
+"PO-Revision-Date: 2020-09-10 15:09:42+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/2.4.0-alpha\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
 "Language: nl\n"
 "Project-Id-Version: Plugins - MetaSlider - Stable (latest release)\n"
 
-#. Author of the plugin
-msgid "Team Updraft"
-msgstr "Team Updraft"
+#: admin/routes/api.php:689
+msgid "The field (%s) cannot be empty"
+msgstr "Het veld (%s) mag niet leeg zijn"
 
-#: ml-slider.php:509
+#: admin/routes/api.php:685
+msgid "The title cannot be empty."
+msgstr "De titel mag niet leeg zijn."
+
+#: admin/routes/api.php:452
+msgid "Nothing to import."
+msgstr "Niets te importeren."
+
+#: admin/views/pages/parts/ie-warning.php:12
+msgid "Update Internet Explorer"
+msgstr "Werk Internet Explorer bij"
+
+#: admin/views/pages/parts/ie-warning.php:8
+msgid "IE11"
+msgstr "IE11"
+
+#: admin/views/pages/parts/ie-warning.php:8
+msgid "Microsoft Internet Explorer 11"
+msgstr "Microsoft Internet Explorer 11"
+
+#: admin/views/pages/parts/ie-warning.php:8
+msgid "It looks like you are using %s. While MetaSlider does support %s on the frontend of the website where users see your slideshows, some of the tools we provide back here require a modern browser."
+msgstr "Het lijkt erop dat je %s gebruikt. Hoewel MetaSlider %s ondersteunt op de frontend van de site waar gebruikers je slide voorstellingen zien, hebben sommige van de gereedschappen die we hier aanbieden een moderne browser nodig."
+
+#: admin/views/pages/parts/ie-warning.php:4
+msgid "Browser upgrade required"
+msgstr "Browserupgrade vereist"
+
+#: admin/views/pages/parts/toolbar.php:19
+msgid "Premium"
+msgstr "Premium"
+
+#: admin/views/pages/settings.php:78 admin/assets/dist/js/app.js:2
+msgid "Export"
+msgstr "Exporteren"
+
+#: admin/views/pages/settings.php:63 admin/assets/dist/js/app.js:2
+msgid "Import"
+msgstr "Importeren"
+
+#: ml-slider.php:1640
+msgid "Add slideshow"
+msgstr "Nieuwe slideshow toevoegen"
+
+#: inc/metaslider.systemcheck.class.php:192
+msgid "Warning:"
+msgstr "Waarschuwing:"
+
+#: inc/metaslider.systemcheck.class.php:82
+msgid "this article"
+msgstr "dit artikel"
+
+#: inc/metaslider.systemcheck.class.php:80
+msgid "Your settings might not be saving properly due to a configuration on your server. %s is currently set to %s, but we recommend a setting of 4000. Please see %s for more information. The php.ini file is being loaded from here: %s"
+msgstr "Je instellingen worden mogelijk niet goed opgeslagen vanwege een configuratie op jouw server. %s is momenteel ingesteld op %s, maar we raden een instelling van 4000 aan. Zie %s voor meer informatie. Het php.ini bestand wordt vanaf hier geladen: %s"
+
+#: admin/views/pages/parts/toolbar.php:43
+msgctxt "This is a keyboard shortcut."
+msgid "(alt + p)"
+msgstr "(alt + p)"
+
+#: admin/routes/api.php:582
+msgid "This was not a slideshow, so we cannot update the setting."
+msgstr "Dit was geen slide voorstelling, dus we kunnen de instelling niet bijwerken."
+
+#: themes/simply-dark/v1.0.0/theme.php:25
+msgid "Next Slide"
+msgstr "Volgende dia"
+
+#: themes/simply-dark/v1.0.0/theme.php:23
+msgid "Previous Slide"
+msgstr "Vorige dia"
+
+#: admin/views/pages/parts/shortcode.php:26
+msgid "Click shortcode to copy"
+msgstr "Klik op shortcode om te kopiëren"
+
+#: admin/views/pages/parts/shortcode.php:15
+msgid "Toggle title"
+msgstr "Toggle titel"
+
+#: admin/views/pages/parts/toolbar.php:98
+msgid "Add CSS"
+msgstr "Voeg CSS toe"
+
+#: admin/views/pages/parts/toolbar.php:94
+msgid "press to learn more"
+msgstr "druk op om meer te weten te komen"
+
+#: admin/views/pages/parts/toolbar.php:94
+msgid "Add custom CSS"
+msgstr "Voeg aangepaste CSS"
+
+#: admin/views/pages/parts/toolbar.php:89
+msgid "Duplicate"
+msgstr "Kopiëren"
+
+#: admin/views/pages/parts/toolbar.php:77
+msgid "Duplicate this slideshow"
+msgstr "Deze slider voorstelling dupliceren"
+
+#: admin/views/pages/parts/toolbar.php:72
+msgid "New"
+msgstr "Nieuw"
+
+#: admin/views/pages/parts/toolbar.php:43
+msgid "Save & open preview"
+msgstr "Opslaan & openen voorbeeld"
+
+#: admin/lib/callout.php:15
+msgid "A new look! With our new toolbar, it is much easier to duplicate your slideshows. Pro users can now add custom CSS. Need a reminder how MetaSlider works? <a href=\"%s\" onclick=\"%s\">Take the tour</a>"
+msgstr "Een nieuwe look! Met onze nieuwe werkbalk is het veel gemakkelijker om jouw slider voorstellingen te dupliceren. Pro gebruikers kunnen nu aangepaste CSS toevoegen. Wil jeeen herinnering hoe MetaSlider werkt? <a href=\"%s\" onclick=\"%s\">Volg de rondleiding</a>"
+
+#: ml-slider.php:1526
+msgid "Opacity of title and navigation, between 0 and 1"
+msgstr "Dekking van titel en navigatie, tussen 0 en 1"
+
+#: ml-slider.php:1318
+msgid "100% width"
+msgstr "100% breedte"
+
+#: admin/slideshows/Themes.php:232
+msgid "We removed your selected theme as it could not be found. Was the folder deleted?"
+msgstr "We hebben het geselecteerde thema verwijderd omdat het niet kon worden gevonden. Is de map verwijderd?"
+
+#: admin/lib/callout.php:180
+msgid "Close"
+msgstr "Sluit"
+
+#: ml-slider.php:201
+msgid "MetaSlider Pro is installed but is out of date. You may update it <a target=\"_blank\" href=\"%s\">here</a>. Learn more about this notice <a href=\"%s\">here</a>"
+msgstr "MetaSlider Pro is geïnstalleerd, maar is verouderd. Je kunt het <a target=\"_blank\" href=\"%s\">hier</a>bijwerken. Lees <a href=\"%s\">hier</a> meer over dit bericht"
+
+#: admin/routes/api.php:494
+msgid "This was not a slideshow, so we cannot delete it."
+msgstr "Dit was geen slide voorstelling, dus we kunnen het niet verwijderen."
+
+#: admin/views/pages/start.php:45
+msgid "Create blank slideshow"
+msgstr "Lege slide voorstelling maken"
+
+#: admin/views/pages/start.php:41
+msgid "Feel free to create a slideshow with no images. If you are a premium member using the add-on pack, select this option to access video, layer, and external URL slides."
+msgstr "Maak gerust een slide voorstelling zonder afbeeldingen. Als je een premium lid bent met het invoegpakket, selecteer je deze optie om toegang te krijgen tot video, laag en externe URL-sliders."
+
+#: admin/views/pages/start.php:39
+msgid "Not quite ready?"
+msgstr "Nog niet klaar?"
+
+#: admin/views/pages/start.php:39
+msgid "Using more than image slides?"
+msgstr "Gebruik je meer dan afbeelding sliders?"
+
+#: admin/views/pages/start.php:27
+msgid "Maximum upload file size: %s."
+msgstr "Maximale bestandsgrootte: %s."
+
+#: admin/views/pages/start.php:20
+msgid "To get started right away, drag and drop your images below."
+msgstr "Sleep en zet de afbeeldingen hieronder om meteen aan de slag te gaan."
+
+#: admin/views/pages/start.php:19
+msgid "Quick start"
+msgstr "Snel starten"
+
+#: admin/views/pages/start.php:12 admin/assets/dist/js/app.js:2
+msgid "Learn more"
+msgstr "Leer meer"
+
+#: admin/views/pages/start.php:12
+msgid "MetaSlider is compatible with Gutenberg, allowing you to select and preview your slideshows direcly in the editor."
+msgstr "MetaSlider is compatibel met Gutenberg, zodat je jouw diavoorstellingen in de editor kunt selecteren en bekijken."
+
+#: admin/views/pages/start.php:11
+msgid "Gutenberg ready!"
+msgstr "Gutenberg klaar!"
+
+#: admin/views/pages/start.php:7
+msgid "To create your first slideshow, select one of the options below."
+msgstr "Als je jouw eerste diavoorstelling wil maken, selecteer je een van de onderstaande opties."
+
+#: admin/views/pages/start.php:6
+msgid "Thank you for installing MetaSlider, the #1 WordPress slideshow plugin"
+msgstr "Bedankt voor het installeren van MetaSlider, de #1 WordPress slideshow plugin"
+
+#: admin/Pages.php:72
+msgid "Please confirm that you would like to delete this slideshow."
+msgstr "Bevestig dat je deze slider voorstelling wil verwijderen."
+
+#: admin/views/pages/parts/toolbar.php:108
+msgid "Save slideshow"
+msgstr "Slide voorstelling opslaan"
+
+#: ml-slider.php:1791
+msgctxt "Translators: %1$s opens and %2$s closes a strong tag"
+msgid "Show off your %1$sblog posts%2$s, %1$sevents%2$s, %1$sWooCommerce products%2$s and other content with %1$sPost Feed%2$s."
+msgstr "Pronk met je %1$sblog posts%2$s, %1$sevents%2$s, %1$sWooCommerce producten%2$s en andere content met %1$sPost Feed%2$s."
+
+#: ml-slider.php:1669
+msgctxt "Keep the plugin name \"MetaSlider\" when possible"
+msgid "Insert MetaSlider"
+msgstr "MetaSlider invoegen"
+
+#: ml-slider.php:1416 ml-slider.php:1429 ml-slider.php:1442 ml-slider.php:1518
+#: ml-slider.php:1540
+msgctxt "Short for milliseconds"
+msgid "ms"
+msgstr "ms"
+
+#: admin/views/pages/upgrade.php:66
+msgid "HTML overlay slides"
+msgstr "HTML overlay sliders"
+
+#: admin/views/pages/upgrade.php:60
+msgctxt "\"YouTube\" and \"Vimeo\" are brand names."
+msgid "Easily include responsive high definition YouTube and Vimeo videos."
+msgstr "Neem eenvoudig responsieve high definition YouTube en Vimeo video's op."
+
+#: admin/views/pages/upgrade.php:46
+msgctxt "Keep the branding \"Smart Crop\" together when possible"
+msgid "Unique Smart Crop functionality ensures your slides are perfectly resized."
+msgstr "Unieke Smart Crop functionaliteit zorgt ervoor dat jouw sliderss perfect worden verkleind."
+
+#: admin/views/pages/upgrade.php:39
+msgctxt "Keep the plugin name \"MetaSlider\" when possible"
+msgid "Our word to keep MetaSlider compatible with the latest versions of WordPress."
+msgstr "Ons woord om MetaSlider compatibel te houden met de nieuwste versies van WordPress."
+
+#: admin/views/pages/upgrade.php:32
+msgctxt "\"FlexSlider\" and \"Nivo Slider\" are plugin names."
+msgid "Including FlexSlider, Nivo Slider and we will soon be adding more."
+msgstr "Inclusief FlexSlider, Nivo Slider en we zullen binnenkort meer toevoegen."
+
+#: admin/views/pages/upgrade.php:12 admin/views/pages/upgrade.php:13
+msgid "MetaSlider logo"
+msgstr "MetaSlider logo"
+
+#: admin/Notices.php:447
+msgctxt "Keep the plugin name \"MetaSlider\" when possible"
+msgid "Review MetaSlider"
+msgstr "Beoordeel MetaSlider"
+
+#: admin/Notices.php:210
+msgctxt "Keep the phrase \"MetaSlider Add-on Pack\" when possible"
+msgid "Summer sale - 20% off the MetaSlider Add-on Pack until July 31st"
+msgstr "Zomeruitverkoop - 20% korting op het MetaSlider Add-on Pack tot 31 juli"
+
+#: admin/Notices.php:201
+msgctxt "Keep the phrase \"MetaSlider Add-on Pack\" when possible"
+msgid "Spring sale - 20% off the MetaSlider Add-on Pack until April 30th"
+msgstr "Voorjaarsuitverkoop - 20% korting op het MetaSlider Add-on Pack tot 30 april"
+
+#: admin/Notices.php:192
+msgctxt "Keep the phrase \"MetaSlider Add-on Pack\" when possible"
+msgid "Happy New Year - 20% off the MetaSlider Add-on Pack until January 14th"
+msgstr "Happy New Year - 20% korting op de MetaSlider Add-on Pack tot 14 januari"
+
+#: admin/Notices.php:183
+msgctxt "Keep the phrase \"MetaSlider Add-on Pack\" when possible"
+msgid "Christmas sale - 20% off the MetaSlider Add-on Pack until December 25th"
+msgstr "Kerstuitverkoop - 20% korting op de MetaSlider Add-on Pack tot 25 december"
+
+#: admin/Notices.php:174
+msgctxt "Keep the phrase \"MetaSlider Add-on Pack\" when possible. Also, \"Black Friday\" is the name of an event in the United States"
+msgid "Black Friday - 20% off the MetaSlider Add-on Pack until November 30th"
+msgstr "Black Friday - 20% korting op het MetaSlider Add-on Pack tot 30 november"
+
+#: admin/Notices.php:110
+msgctxt "Keep the plugin name \"MetaSlider\" when possible"
+msgid "With the MetaSlider Add-on pack you can give your slideshows a professional look!"
+msgstr "Met het MetaSlider Add-on pack kun je jouw slide voorstellingen een professionele uitstraling geven!"
+
+#: admin/Notices.php:100
+msgctxt "Keep the plugin name \"MetaSlider\" when possible"
+msgid "Please help MetaSlider by giving a positive review at wordpress.org."
+msgstr "Help MetaSlider door een positieve beoordeling te geven op wordpress.org."
+
+#: admin/Notices.php:99
+msgctxt "Keep the plugin name \"MetaSlider\" when possible"
+msgid "Like MetaSlider and have a minute to spare?"
+msgstr "Hou je van MetaSlider en heb je een minuut over?"
+
+#: themes/manifest.php:174
+msgid "The Nivo Dark theme included here for legacy purposes. Note: only works with Nivo Slider"
+msgstr "De Nivo Dark thema hier opgenomen voor oudere doeleinden. Let op: werkt alleen met Nivo Slider"
+
+#: themes/manifest.php:166
+msgid "The Nivo Bar theme included here for legacy purposes. Note: only works with Nivo Slider"
+msgstr "De Nivo Bar thema hier opgenomen voor oudere doeleinden. Let op: werkt alleen met Nivo Slider"
+
+#: themes/manifest.php:158
+msgid "The Nivo Light theme included here for legacy purposes. Note: only works with Nivo Slider"
+msgstr "Het Nivo Light thema hier opgenomen voor oudere doeleinden. Let op: werkt alleen met Nivo Slider"
+
+#: themes/manifest.php:149
+msgid "A minimalist theme that gets out of the way so you can showcasing your beautiful pictures."
+msgstr "Een minimalistisch thema dat uit de weg gaat, zodat je jouw prachtige afbeeldingen kunt tonen."
+
+#: themes/manifest.php:140
+msgid "A bold and clear design that works well on a darker images."
+msgstr "Een gedurfd en duidelijk ontwerp dat goed werkt op een donkerdere afbeeldingen."
+
+#: themes/manifest.php:131
+msgid "This theme has a unique design that gives it a sophisticated look."
+msgstr "Dit thema heeft een uniek ontwerp dat het een verfijnde uitstraling geeft."
+
+#: themes/manifest.php:100
+msgid "This theme has a special additional functionality that uses image titles as the slide navigation. "
+msgstr "Dit thema heeft een speciale extra functionaliteit die afbeeldingstitels als slide navigatie gebruikt."
+
+#: themes/manifest.php:91
+msgid "A simple theme that neatly blends into any existing website."
+msgstr "Een eenvoudig thema dat netjes opgaat in elke bestaande site."
+
+#: themes/manifest.php:82
+msgid "A futuristic and linear design that goes will with a dark background."
+msgstr "Een futuristisch en lineair ontwerp dat goed gaat met een donkere achtergrond."
+
+#: themes/manifest.php:73
+msgid "This theme places the controls vertically for a unique look."
+msgstr "Dit thema plaatst de besturingselementen verticaal voor een unieke look."
+
+#: themes/manifest.php:32
+msgid "A fun, circular design to brighten up your site. This theme works well with dark images"
+msgstr "Een leuk, circulair ontwerp om je site op te fleuren. Dit thema werkt goed met donkere afbeeldingen"
+
+#: themes/manifest.php:23
+msgid "A clean, subtle theme that features block arrows and bold design."
+msgstr "Een schoon, subtiel thema met blokpijlen en gedurfd ontwerp."
+
+#: themes/manifest.php:14
+msgid "A simple, slick square design that looks good on darker images."
+msgstr "Een eenvoudig, glad vierkant ontwerp dat er goed uitziet op donkere afbeeldingen."
+
+#: themes/manifest.php:41
+msgid "A minimalistic, no-frills design that was built to blend in with most themes."
+msgstr "Een minimalistisch, no-nonsense ontwerp dat is gebouwd om in de meeste thema's op te gaan."
+
+#: admin/views/pages/parts/shortcode.php:27
+msgid "Copy all code"
+msgstr "Alle code kopiëren"
+
+#: ml-slider.php:1793
+msgid "Post Feed slides can also be used with other slide types to either show one post at a time or in a carousel mode, allowing you to show off a large number of your latest posts in a small amount of space."
+msgstr "Bericht Feed sliders kunnen ook worden gebruikt met andere slider typen om één bericht tegelijk of in een carouselmodus weer te geven, zodat je een groot aantal van jouw laatste berichten in een kleine hoeveelheid ruimte weergeven."
+
+#: ml-slider.php:1792
+msgid "Customise and control which post types you want to display, their order and how to restrict posts to certain tags or categories."
+msgstr "Pas aan en bepaal welke berichttypen je wil weergeven, hun volgorde en hoe je berichten kunt beperken tot bepaalde tags of categorieën."
+
+#: ml-slider.php:1764
+msgid "Create a slideshow full of your favorite videos easily and quickly by simply adding a URL to a YouTube slide."
+msgstr "Maak eenvoudig en snel een slider voorstelling vol met je favoriete video's door simpelweg een URL toe te voegen aan een YouTube slide."
+
+#: ml-slider.php:1738 ml-slider.php:1766
+msgid "You could even have the slider autoplay a video, giving you a smooth, completely automatic presentation!"
+msgstr "Je zou zelfs de slider autoplay een video kunnen hebben, waardoor je een soepele, volledig automatische presentatie krijgt!"
+
+#: ml-slider.php:1737 ml-slider.php:1765
+msgid "Features include an automatic play/pause function, in which your slideshow will detect when you set a video to play and continue once the video has finished."
+msgstr "Functies omvatten een automatische afspeel-/pauzefunctie, waarin je slide voorstelling detecteert wanneer je een video instelt om af te spelen en verder te gaan zodra de video is voltooid."
+
+#: ml-slider.php:1736
+msgid "Create a slideshow full of your favorite videos easily and quickly by simply adding a URL to a Vimeo slide."
+msgstr "Maak eenvoudig en snel een slide voorstelling vol met je favoriete video's door simpelweg een URL toe te voegen aan een Vimeo slide."
+
+#: ml-slider.php:1711 ml-slider.php:1740 ml-slider.php:1768 ml-slider.php:1795
+msgid "Opens in a new window"
+msgstr "Wordt geopend in een nieuw venster"
+
+#: ml-slider.php:1710 ml-slider.php:1739 ml-slider.php:1767 ml-slider.php:1794
+msgid "Find out more about all the features of the Add-on Pack here"
+msgstr "Lees hier meer over alle functies van het Add-on Pack"
+
+#: ml-slider.php:1709
+msgid "Additional optimization and customization options including using a video as the slide background, and adjusting the padding and background color of each layer."
+msgstr "Aanvullende optimalisatie en aanpassingsopties, waaronder het gebruik van een video als slider achtergrond en het aanpassen van de opvulling en achtergrondkleur van elke laag."
+
+#: ml-slider.php:1708
+msgctxt "Translators: %1$s opens and %2$s closes a strong tag"
+msgid "Layers can include %1$s text, HTML, images, videos %2$s and even %1$s shortcodes%2$s!"
+msgstr "Lagen kunnen bestaan uit %1$s tekst, HTML, afbeeldingen, video's %2$s en zelfs %1$s shortcodes%2$s!"
+
+#: ml-slider.php:1708
+msgctxt "Translators: %s opens and closes a strong tag"
+msgid "Ideal for easily creating eye-catching presentations and slideshows using stunning effects with %s 30 animation options %s and a beautiful, easy to use interface."
+msgstr "Ideaal voor het eenvoudig maken van opvallende presentaties en diavoorstellingen met verbluffende effecten met %s 30 animatieopties %s en een mooie, gebruiksvriendelijke interface."
+
+#: inc/slide/metaslide.image.class.php:382
+msgid "Schedule"
+msgstr "Planning"
+
+#: admin/views/slides/tabs/schedule.php:9
+msgid "Get it now!"
+msgstr "Verkrijg hem nu!"
+
+#: admin/views/slides/tabs/schedule.php:8
+msgid "Get the Pro add-on pack now to add a start/end date option to your slides"
+msgstr "Download nu het Pro add-on-pakket om een begin-/einddatum optie aan je sliders toe te voegen"
+
+#: admin/views/slides/tabs/schedule.php:6
+msgid "Why am I seeing this?"
+msgstr "Waarom krijg ik dit te zien?"
+
+#: admin/views/slides/tabs/schedule.php:5
+msgctxt "A coupon code and a discount amount"
+msgid "Have an expired license? Use coupon code %s for a %s discount"
+msgstr "Heb je een verlopen licentie? Couponcode %s gebruiken voor een %s korting"
+
+#: admin/views/slides/tabs/schedule.php:4
+msgid "Update or activate your pro add-on pack now to add a start/end date option to your slides"
+msgstr "Je pro add-on pack bijwerken of activeren om een begin/einddatum optie aan je sliders toe te voegen"
+
+#: admin/views/pages/upgrade.php:96
+msgid "Allows you to hide any slide, without having to delete them."
+msgstr "Hiermee kun je elke slider verbergen, zonder deze te hoeven verwijderen."
+
+#: admin/views/pages/upgrade.php:95
+msgid "Toggle your slide's visibility"
+msgstr "De zichtbaarheid van je slider in/uitschakelen"
+
+#: admin/views/pages/upgrade.php:88
+msgid "Add a start/end date to individual slides."
+msgstr "Voeg een begin-/einddatum toe aan afzonderlijke sliders."
+
+#: admin/views/pages/upgrade.php:87
+msgid "Schedule your slides"
+msgstr "Je sliders plannen"
+
+#: admin/slideshows/Themes.php:52
+msgid "No themes found."
+msgstr "Geen thema’s gevonden"
+
+#: admin/slideshows/Image.php:135
+msgid "We could not find any images to import."
+msgstr "We konden geen afbeeldingen vinden om te importeren."
+
+#: admin/routes/api.php:365 admin/routes/api.php:487
+msgid "This slideshow is no longer available."
+msgstr "Deze slide voorstelling is niet meer beschikbaar."
+
+#: admin/routes/api.php:357
+msgid "The request format was not valid."
+msgstr "Het verzoek formaat was niet geldig."
+
+#: ml-slider.php:1379
+msgid "Fade in the first slide"
+msgstr "Vervagen in de eerste slide"
+
+#: ml-slider.php:1376
+msgid "Fade in"
+msgstr "Overgang van zwart"
+
+#: admin/routes/api.php:115
+msgid "You do not have access to this resource."
+msgstr "Je hebt geen toegang tot deze bron."
+
+#: admin/views/slides/tabs/seo.php:16
+msgid "Use the image alt text"
+msgstr "De tekst van de afbeelding gebruiken"
+
+#: admin/views/slides/tabs/seo.php:15
+msgid "Enable this to inherit the image alt text"
+msgstr "Schakel dit in om de tekst van de afbeelding te overerven"
+
+#: admin/views/slides/tabs/seo.php:6
+msgid "Use the image title"
+msgstr "De afbeeldingstitel gebruiken"
+
+#: admin/views/slides/tabs/seo.php:5
+msgid "Enable this to inherit the image title"
+msgstr "Schakel dit in om de afbeeldingstitel te erven"
+
+#: admin/views/slides/tabs/general.php:29
+msgid "Open in a new window"
+msgstr "Open in nieuw venster"
+
+#: admin/views/notices/header-notice.php:11
+msgid "Dismiss"
+msgstr "Negeren"
+
+#: admin/views/pages/parts/shortcode.php:31
+msgid "Copy all"
+msgstr "Alles kopiëren"
+
+#: admin/views/pages/parts/shortcode.php:21
+msgid "To display your slideshow, add the following shortcode (in orange) to your page. If adding the slideshow to your theme files, additionally include the surrounding PHP code (in gray).&lrm;"
+msgstr "Als je jouw slide voorstelling wil weergeven, voegt je de volgende shortcode (in oranje) toe aan je pagina. Als je de slide voorstelling toevoegt aan je themabestanden, moet je bovendien de omringende PHP code (in grijs)&lrm opnemen."
+
+#: ml-slider.php:1309
+msgid "Click to toggle"
+msgstr "Klik om te wisselen"
+
+#: admin/views/pages/parts/shortcode.php:11
+msgid "How to Use"
+msgstr "Hoe te gebruiken"
+
+#: admin/Pages.php:77
+msgid "Item was copied to your clipboard"
+msgstr "Item is gekopieerd naar jouw klembord"
+
+#: admin/Pages.php:76 admin/assets/js/app/globals.js:104
+#: admin/assets/dist/js/app.js:2
+msgid "Success"
+msgstr "Gelukt"
+
+#: ml-slider.php:1835
+msgid "Leave a review"
+msgstr "Schrijf een beoordeling"
+
+#: ml-slider.php:1828
+msgid "Premium Support"
+msgstr "Premium Ondersteuning"
+
+#: ml-slider.php:1832
+msgid "Support"
+msgstr "Ondersteuning"
+
+#: ml-slider.php:1826
+msgid "Take a tour"
+msgstr "Maak een rondleiding"
+
+#: ml-slider.php:1595
+msgid "Delete slideshow"
+msgstr "Slide voorstelling verwijderen"
+
+#: ml-slider.php:1296
+msgid "View trashed slides"
+msgstr "Verwijderde sliders weergeven"
+
+#: ml-slider.php:1275
+msgid "Filmstrip"
+msgstr "Filmstrip"
+
+#: ml-slider.php:1271
+msgid "Thumbnail"
+msgstr "Omvang miniatuur"
+
+#: admin/views/pages/parts/toolbar.php:52 admin/assets/dist/js/app.js:2
+msgid "Preview"
+msgstr "Voorvertoning"
+
+#: ml-slider.php:1171
+msgid "You are viewing slides that have been trashed, which will be automatically deleted in %s days. Click <a href=\"%s\">here</a> to view active slides."
+msgstr "Je bekijkt sliders die zijn weggegooid, die automatisch worden verwijderd in %s dagen. Klik <a href=\"%s\">hier</a> om actieve sliders te bekijken."
+
+#: admin/views/pages/parts/toolbar.php:33
+msgid "Add a new slide"
+msgstr "Een nieuwe slider toevoegen"
+
+#: ml-slider.php:1137
+msgid "<a href=\"%s\">view active</a>"
+msgstr "<a href=\"%s\">actief weergeven</a>"
+
+#: ml-slider.php:1136
+msgid "Trashed Slides"
+msgstr "Verwijderde sliders"
+
+#: ml-slider.php:941
+msgid "Get the Add-on Pack today!"
+msgstr "Ontvang vandaag nog het Add-on Pack!"
+
+#: admin/slideshows/Settings.php:53
+msgid "New Slideshow"
+msgstr "Nieuwe slide voorstelling"
+
+#: ml-slider.php:697
+msgid "The slide was successfully trashed"
+msgstr "De slide is met succes verwijderd"
+
+#: ml-slider.php:662
+msgid "The attempt to restore the slide failed."
+msgstr "De poging om de slide te herstellen is mislukt."
+
+#: ml-slider.php:641
+msgid "The slide was successfully restored"
+msgstr "De slide is hersteld"
+
+#: ml-slider.php:497
+msgid "Add to slideshow"
+msgstr "Toevoegen aan slider voorstelling"
+
+#: admin/slideshows/Settings.php:75 inc/slider/metaslider.class.php:109
+msgid "Previous"
+msgstr "Vorige"
+
+#: inc/slide/metaslide.image.class.php:89
+msgid "This isn't an accepted image. Please try again."
+msgstr "Dit is geen geaccepteerd beeld. Probeer het opnieuw."
+
+#: inc/slide/metaslide.image.class.php:284 inc/slide/metaslide.class.php:374
+msgid "Update slide image"
+msgstr "Slide afbeelding bijwerken"
+
+#: inc/slide/metaslide.class.php:363
+msgid "Delete Permanently"
+msgstr "Permanent verwijderen"
+
+#: inc/slide/metaslide.class.php:351
+msgid "Restore"
+msgstr "Herstellen"
+
+#: inc/slide/metaslide.class.php:270
+msgid "There was an error while updating the database. Please try again."
+msgstr "Er is een fout opgetreden tijdens het bijwerken van de database. Probeer het opnieuw."
+
+#: inc/slide/metaslide.class.php:113
+msgid "There was an error updating the image. Please try again"
+msgstr "Er is een fout opgetreden bij het bijwerken van de afbeelding. Probeer het opnieuw"
+
+#: inc/slide/metaslide.class.php:107
+msgid "The image was successfully updated."
+msgstr "De afbeelding is bijgewerkt."
+
+#: inc/slide/metaslide.class.php:87
+msgid "The requested image does not exist. Please try again."
+msgstr "De gevraagde afbeelding bestaat niet. Probeer het opnieuw."
+
+#: admin/views/pages/upgrade.php:103
+msgid "Have your specific queries addressed directly by our experts"
+msgstr "Laat je specifieke vragen rechtstreeks door onze experts beantwoorden"
+
+#: admin/views/pages/upgrade.php:102
+msgid "Premium support"
+msgstr "Premium Ondersteuning"
+
+#: admin/views/pages/upgrade.php:81
+msgid "Easily build slides based on your WordPress posts."
+msgstr "Bouw eenvoudig sliders op basis van je WordPress berichten."
+
+#: admin/views/pages/upgrade.php:80
+msgid "Post feed slides"
+msgstr "Bericht feed sliders"
+
+#: admin/views/pages/upgrade.php:74
+msgid "Add layers to your slides with over 50 available transition effects."
+msgstr "Voeg lagen toe aan jouw sliders met meer dan 50 beschikbare overgangseffecten."
+
+#: admin/views/pages/upgrade.php:73
+msgid "Add slide layers"
+msgstr "Slider lagen toevoegen"
+
+#: admin/views/pages/upgrade.php:67
+msgid "Create completely customized HTML slides using the inline editor."
+msgstr "Maak volledig aangepaste HTML sliders met behulp van de inline editor."
+
+#: admin/views/pages/upgrade.php:59
+msgid "Add video slides"
+msgstr "Video sliders toevoegen"
+
+#: admin/views/pages/upgrade.php:54 admin/views/pages/upgrade.php:61
+#: admin/views/pages/upgrade.php:68 admin/views/pages/upgrade.php:75
+#: admin/views/pages/upgrade.php:82 admin/views/pages/upgrade.php:89
+#: admin/views/pages/upgrade.php:97 admin/views/pages/upgrade.php:104
+msgid "No"
+msgstr "Nee"
+
+#: admin/views/pages/upgrade.php:53
+msgid "Easily allow users to navigate your slideshows by thumbnails."
+msgstr "Laat gebruikers eenvoudig door je slide voorstellingen navigeren door thumbnails."
+
+#: admin/views/pages/upgrade.php:52
+msgid "Thumbnail navigation"
+msgstr "Thumbnail navigatie"
+
+#: admin/views/pages/upgrade.php:45
+msgid "Intelligent image cropping"
+msgstr "Intelligente afbeelding bijsnijden"
+
+#: admin/views/pages/upgrade.php:38
+msgid "Regular updates"
+msgstr "Regelmatige updates"
+
+#: admin/views/pages/upgrade.php:31
+msgid "Multiple slideshow types"
+msgstr "Meerdere slide voorstellingstypen"
+
+#: admin/views/pages/upgrade.php:26 admin/views/pages/upgrade.php:27
+#: admin/views/pages/upgrade.php:33 admin/views/pages/upgrade.php:34
+#: admin/views/pages/upgrade.php:40 admin/views/pages/upgrade.php:41
+#: admin/views/pages/upgrade.php:47 admin/views/pages/upgrade.php:48
+#: admin/views/pages/upgrade.php:55 admin/views/pages/upgrade.php:62
+#: admin/views/pages/upgrade.php:69 admin/views/pages/upgrade.php:76
+#: admin/views/pages/upgrade.php:83 admin/views/pages/upgrade.php:90
+#: admin/views/pages/upgrade.php:98 admin/views/pages/upgrade.php:105
+msgid "Yes"
+msgstr "Ja"
+
+#: admin/views/pages/upgrade.php:25
+msgid "Create and manage as many slideshows as you need."
+msgstr "Maak en beheer zoveel slide voorstellingen als je nodig hebt."
+
+#: admin/views/pages/upgrade.php:24
+msgid "Create unlimited slideshows"
+msgstr "Onbeperkte slide voorstellingen maken"
+
+#: admin/views/pages/upgrade.php:20 admin/views/pages/upgrade.php:112
+msgid "Upgrade now"
+msgstr "Upgrade nu"
+
+#: admin/views/pages/upgrade.php:19 admin/views/pages/upgrade.php:111
+msgid "Installed"
+msgstr "Geïnstalleerd"
+
+#: admin/views/pages/upgrade.php:13
+msgid "pro"
+msgstr "pro"
+
+#: ml-slider.php:384 ml-slider.php:1831 admin/views/pages/upgrade.php:13
+msgid "Add-ons"
+msgstr "Toevoegingen"
+
+#: admin/views/pages/upgrade.php:12
+msgid "free"
+msgstr "gratis"
+
+#: admin/views/pages/upgrade.php:7
+msgid "Comparison Chart"
+msgstr "Vergelijkingsgrafiek"
+
+#: admin/views/notices/header-notice.php:6
+msgid "Logo"
+msgstr "Logo"
+
+#: admin/slideshows/Settings.php:76 inc/slider/metaslider.class.php:110
+msgid "Next"
+msgstr "Volgende"
+
+#: ml-slider.php:941
+msgid "Learn More"
+msgstr "Leer meer"
+
+#: admin/Pages.php:78
+msgid "Press to undo"
+msgstr "Druk op om ongedaan te maken"
+
+#: admin/Pages.php:75
+msgid "Slide deleted"
+msgstr "Slide verwijderd."
+
+#: admin/Pages.php:74
+msgid "Slide restored"
+msgstr "Slide hersteld"
+
+#: admin/Pages.php:73
+msgid "Undo"
+msgstr "Ongedaan maken"
+
+#: admin/Notices.php:581
+msgid "The attempt to update the option failed."
+msgstr "De poging om de optie bij te werken is mislukt."
+
+#: admin/Notices.php:556
+msgid "The requested data does not exist."
+msgstr "De gevraagde gegevens bestaan niet."
+
+#: admin/Notices.php:485
+msgid "The option was successfully updated"
+msgstr "De optie is bijgewerkt"
+
+#: admin/Notices.php:472
+msgid "This item does not exist. Please refresh the page and try again."
+msgstr "Dit object bestaat niet. Vernieuw de pagina en probeer het opnieuw."
+
+#: ml-slider.php:628 ml-slider.php:684 admin/Notices.php:466
+#: inc/slide/metaslide.image.class.php:125
+#: inc/slide/metaslide.image.class.php:188 inc/slide/metaslide.class.php:125
+msgid "The security check failed. Please refresh the page and try again."
+msgstr "De veiligheidscontrole is mislukt. Vernieuw de pagina en probeer het opnieuw."
+
+#: admin/Notices.php:452
+msgid "Read more"
+msgstr "Lees meer"
+
+#: admin/Notices.php:450
+msgid "Go there"
+msgstr "Ga erheen"
+
+#: admin/Notices.php:449
+msgid "Sign up"
+msgstr "Aanmelden"
+
+#: admin/Notices.php:448
+msgid "Find out more"
+msgstr "Meer te weten komen"
+
+#: admin/Notices.php:446
+msgid "Let's Start"
+msgstr "Laten we beginnen"
+
+#: admin/Notices.php:427
+msgid "weeks"
+msgstr "weken"
+
+#: admin/Notices.php:175 admin/Notices.php:184 admin/Notices.php:193
+#: admin/Notices.php:202 admin/Notices.php:211
+msgid "To benefit, use this discount code:"
+msgstr "Om te profiteren, benut deze kortingscode:"
+
+#: admin/Notices.php:130
+msgid "Please go here for instructions - it is easy."
+msgstr "Ga hier voor instructies - het is gemakkelijk."
+
+#: admin/Notices.php:129
+msgid "Can you translate? Want to improve MetaSlider for speakers of your language?"
+msgstr "Kun je vertalen? Wilt je MetaSlider verbeteren voor sprekers van jouw taal?"
+
+#: admin/Notices.php:120
+msgid "Upgrade today to benefit from many more premium features. Find out more."
+msgstr "Upgrade vandaag nog om te profiteren van nog veel meer premium functies. Meer weten?"
+
+#: admin/Notices.php:119
+msgid "Increase your revenue and conversion with video slides and many more features"
+msgstr "Verhoog je omzet en conversie met videodia's en nog veel meer functies"
+
+#: admin/Notices.php:109
+msgid "Spice up your site with animated layers and video slides"
+msgstr "Maak je site klaar met geanimeerde lagen en video sliders"
+
+#: ml-slider.php:537
 msgid "Layer Slide"
-msgstr "Layer Slide"
+msgstr "Gelaagde slide"
 
-#: ml-slider.php:508
+#: ml-slider.php:536
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ml-slider.php:507
+#: ml-slider.php:535
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ml-slider.php:506
+#: ml-slider.php:534
 msgid "Post Feed"
 msgstr "Berichten-feed"
 
-#: ml-slider.php:1549
-msgid "Opacity"
-msgstr "(on)Doorzichtigheid"
-
-#: ml-slider.php:1564
-msgid "Set the fade in speed of the caption"
-msgstr "Stel hier de snelheid in waarmee het onderschrift vervaagt"
-
-#: ml-slider.php:1691
-msgid "Choose slideshow"
-msgstr "Slideshow kiezen"
-
-#: ml-slider.php:1576
-msgid "CSS classes"
-msgstr "CSS-klassen"
-
-#: ml-slider.php:1578
-msgid "Specify any custom CSS Classes you would like to be added to the slider wrapper"
-msgstr "Specificeer iedere aangepaste CSS-klasse die je wilt toevoegen aan de slider-wrapper."
-
-#: ml-slider.php:1584
-msgid "Print CSS"
-msgstr "CSS weergeven"
-
-#: ml-slider.php:1592
-msgid "Print JS"
-msgstr "JS weergeven"
-
-#: ml-slider.php:1600
-msgid "No conflict mode"
-msgstr "Geen conflict-modus"
-
-#: ml-slider.php:1603
-msgid "Delay adding the flexslider class to the slideshow"
-msgstr "Vertraging tijdens toevoegen van flexslider-klasse aan de slideshow"
-
-#: ml-slider.php:1697
-msgid "Insert slideshow"
-msgstr "Slideshow invoegen"
+#. Description of the plugin
+msgid "Easy to use slideshow plugin. Create SEO optimised responsive slideshows with Nivo Slider, Flex Slider, Coin Slider and Responsive Slides."
+msgstr "Eenvoudig te gebruiken slideshow plugin. Maak SEO geoptimaliseerde responsieve slide voorstellingen met Nivo Slider, Flex Slider, Coin Slider en Responsive Slides."
 
 #. Plugin URI of the plugin
 #. Author URI of the plugin
 msgid "https://www.metaslider.com"
 msgstr "https://www.metaslider.com"
 
-#. Description of the plugin
-msgid "Easy to use slideshow plugin. Create SEO optimised responsive slideshows with Nivo Slider, Flex Slider, Coin Slider and Responsive Slides."
-msgstr "Makkelijk te gebruiken slidehow plugin. Maak SEO geoptimaliseerde responsive slideshows met Nivo Slider, Flex Slider, Coin Slider en Responsive Slides."
+#: ml-slider.php:1676
+msgid "Insert slideshow"
+msgstr "Slide voorstelling invoegen"
+
+#: ml-slider.php:1671
+msgid "Choose slideshow"
+msgstr "Slider voorstelling kiezen"
+
+#: ml-slider.php:1638
+msgid "Select slideshow to insert into post"
+msgstr "Slide voorstelling selecteren om in te voegen in het bericht"
+
+#: ml-slider.php:1578
+msgid "Delay adding the flexslider class to the slideshow"
+msgstr "Het toevoegen van de flexslider klasse aan de slide voorstelling vertragen"
+
+#: ml-slider.php:1575
+msgid "No conflict mode"
+msgstr "Geen conflictmodus"
+
+#: ml-slider.php:1570
+msgid "Uncheck this is you would like to include your own Javascript"
+msgstr "Schakel dit uit als je je eigen Javascript wil opnemen"
+
+#: ml-slider.php:1567
+msgid "Print JS"
+msgstr "JS afdrukken"
 
 #: ml-slider.php:1562
-msgid "Caption speed"
-msgstr "Onderschrift-snelheid"
-
-#: ml-slider.php:1571
-msgid "Developer options"
-msgstr "Ontwikkelaarsopties"
-
-#: ml-slider.php:1595
-msgid "Uncheck this is you would like to include your own Javascript"
-msgstr "Vink deze uit wanneer je een eigen JavaScript wilt invoegen"
-
-#: ml-slider.php:1587
 msgid "Uncheck this is you would like to include your own CSS"
-msgstr "Vink deze uit wanneer je zelf CSS wilt invoegen"
+msgstr "Schakel dit uit als je je eigen CSS wilt opnemen"
 
-#: ml-slider.php:1657
-msgid "Select slideshow to insert into post"
-msgstr "Selecteer een slideshow om in je bericht te plaatsen"
+#: ml-slider.php:1559
+msgid "Print CSS"
+msgstr "CSS afdrukken"
 
-#: ml-slider.php:467
-msgid "Image"
-msgstr "Afbeelding"
+#: ml-slider.php:1553
+msgid "Specify any custom CSS Classes you would like to be added to the slider wrapper"
+msgstr "Alle aangepaste CSS klassen opgeven die je aan de slide wrapper wil toevoegen"
 
-#: admin/Pages.php:64 admin/assets/js/app-3-16-3.js:37837
-#: admin/assets/js/app-3-16-3.js:38126
-msgid "Caption"
-msgstr "Onderschrift"
+#: ml-slider.php:1551
+msgid "CSS classes"
+msgstr "CSS klassen"
 
-#: admin/Pages.php:65
-msgid "New Window"
-msgstr "Nieuw venster"
+#: ml-slider.php:1546
+msgid "Developer options"
+msgstr "Ontwikkelaars opties"
 
-#: admin/assets/js/app-3-16-3.js:7986
-msgid "Are you sure?"
-msgstr "Zeker weten?"
+#: ml-slider.php:1539
+msgid "Set the fade in speed of the caption"
+msgstr "De fade snelheid van het bijschrift instellen"
 
-#: ml-slider.php:1846
-msgid "Documentation"
-msgstr "Documentatie"
+#: ml-slider.php:1537
+msgid "Caption speed"
+msgstr "Bijschrift snelheid"
 
-#: admin/views/pages/parts/toolbar.php:89
-msgid "Save"
-msgstr "Opslaan"
+#: ml-slider.php:1524
+msgid "Opacity"
+msgstr "Doorzichtigheid"
 
-#: ml-slider.php:1231 ml-slider.php:1477
-msgid "Width"
-msgstr "Breedte"
+#: ml-slider.php:1517
+msgid "Delay between squares in ms"
+msgstr "Vertraging tussen vierkanten in ms"
 
-#: ml-slider.php:1233 admin/assets/js/editor-block-3-16-3.js:161
-#: admin/assets/js/editor-block-3-16-3.js:184
-msgid "Slideshow width"
-msgstr "Slideshow breedte"
-
-#: ml-slider.php:1244 ml-slider.php:1490
-msgid "Height"
-msgstr "Hoogte"
-
-#: ml-slider.php:1246
-msgid "Slideshow height"
-msgstr "Slideshow hoogte"
-
-#: ml-slider.php:1257 ml-slider.php:1409
-msgid "Random"
-msgstr "Willekeurig"
-
-#: ml-slider.php:1260
-msgid "Straight"
-msgstr "Recht"
-
-#: ml-slider.php:1280
-msgid "Arrows"
-msgstr "Pijlen"
-
-#: ml-slider.php:1288
-msgid "Navigation"
-msgstr "Navigatie"
-
-#: ml-slider.php:1291
-msgid "Show the slide navigation bullets"
-msgstr "Slide Navigatiebalk weergeven"
-
-#: ml-slider.php:1293
-msgid "Hidden"
-msgstr "Verborgen"
-
-#: admin/assets/js/app-3-16-3.js:37810
-msgid "Title"
-msgstr "Titel"
-
-#: ml-slider.php:1351
-msgid "Center align"
-msgstr "Uitlijnen midden"
-
-#: ml-slider.php:1354
-msgid "Center align the slideshow"
-msgstr "Slideshow in midden uitlijnen"
-
-#: ml-slider.php:1362
-msgid "Transition between slides automatically"
-msgstr "Overgang tussen slides automatisch"
-
-#: ml-slider.php:1376
-msgid "Smart Crop ensures your responsive slides are cropped to a ratio that results in a consistent slideshow size"
-msgstr "Slim uitsnijden garandeerd dat de slides optimaal worden uitgesneden, zodat deze in het juiste formaat worden weergegeven"
-
-#: ml-slider.php:1412
-msgid "Randomise the order of the slides"
-msgstr "Stel de volgorde van de slides in op Willekeurig"
-
-#: ml-slider.php:1425
-msgid "Reverse"
-msgstr "Omkeren"
-
-#: ml-slider.php:1440
-msgid "How long to display each slide, in milliseconds"
-msgstr "Weergave tijd per slide, in milliseconden"
-
-#: ml-slider.php:1503
-msgid "Horizontal"
-msgstr "Horizontaal"
+#: ml-slider.php:1515
+msgid "Square delay"
+msgstr "Vierkant vertraging"
 
 #: ml-slider.php:1504
+msgid "Set the text for the 'next' direction item"
+msgstr "De tekst instellen voor het 'volgende' richting artikel"
+
+#: ml-slider.php:1502
+msgid "Next text"
+msgstr "Tekst Volgende"
+
+#: ml-slider.php:1496
+msgid "Set the text for the 'previous' direction item"
+msgstr "De tekst instellen voor het 'vorige' richting artikel"
+
+#: ml-slider.php:1494
+msgid "Previous text"
+msgstr "Tekst Vorige"
+
+#: ml-slider.php:1487
+msgid "Animation easing effect"
+msgstr "Animatie versoepeld effect"
+
+#: ml-slider.php:1485
+msgid "Easing"
+msgstr "Versoepeling"
+
+#: ml-slider.php:1479
 msgid "Vertical"
 msgstr "Verticaal"
 
-#: ml-slider.php:1510
-msgid "Easing"
-msgstr "Versoepelen"
+#: ml-slider.php:1478
+msgid "Horizontal"
+msgstr "Horizontaal"
 
-#: admin/views/pages/parts/toolbar.php:33
-msgid "Add Slide"
-msgstr "Slide toevoegen"
+#: ml-slider.php:1475
+msgid "Select the sliding direction"
+msgstr "De schuifrichting selecteren"
 
-#: inc/metaslider.widget.class.php:106
-msgid "Title:"
-msgstr "Titel:"
+#: ml-slider.php:1473
+msgid "Slide direction"
+msgstr "Slide richting"
 
-#: inc/metaslider.widget.class.php:109
-msgid "Select Slider:"
-msgstr "Slider Selecteren:"
+#: ml-slider.php:1452 ml-slider.php:1454 ml-slider.php:1465 ml-slider.php:1467
+msgid "Number of squares"
+msgstr "Aantal vierkanten"
 
-#: inc/slide/metaslide.image.class.php:241
-msgid "Image Slide"
-msgstr "Afbeelding Slide"
+#: ml-slider.php:1439 ml-slider.php:1441
+msgid "Number of slices"
+msgstr "Aantal segmenten"
 
-#: inc/slide/metaslide.image.class.php:333
-msgid "General"
-msgstr "Algemeen"
+#: ml-slider.php:1428
+msgid "Set the speed of animations, in milliseconds"
+msgstr "Animatiesnelheid instellen, in milliseconden"
 
-#: admin/Pages.php:63 admin/views/slides/tabs/general.php:27
-msgid "URL"
-msgstr "URL"
+#: ml-slider.php:1426
+msgid "Animation speed"
+msgstr "Animatie-snelheid"
 
-#: ml-slider.php:1372
-msgid "Standard"
-msgstr "Standaard"
+#: ml-slider.php:1415
+msgid "How long to display each slide, in milliseconds"
+msgstr "Weergavetijd per slide, in milliseconden"
 
-#: admin/views/slides/tabs/crop.php:8
-msgid "Top Center"
-msgstr "Boven gecentreerd"
+#: ml-slider.php:1413
+msgid "Slide delay"
+msgstr "Slide-vertraging"
 
-#: admin/views/slides/tabs/crop.php:14
-msgid "Bottom Center"
-msgstr "Onder gecentreerd"
+#: ml-slider.php:1403
+msgid "Reverse the animation direction"
+msgstr "Keer de animatierichting om"
 
-#: ml-slider.php:1373
+#: ml-slider.php:1400
+msgid "Reverse"
+msgstr "Omgekeerde volgorde"
+
+#: ml-slider.php:1395
+msgid "Pause the slideshow when hovering over slider, then resume when no longer hovering."
+msgstr "Pauzeer de slideshow zodra de cursor boven de slider wordt geplaatst en hervat de slideshow als hij wordt verwijderd."
+
+#: ml-slider.php:1392
+msgid "Hover pause"
+msgstr "Pause bij zweven van de muis"
+
+#: ml-slider.php:1387
+msgid "Randomise the order of the slides"
+msgstr "Randomiseer de volgorde van de sliders"
+
+#: ml-slider.php:1370
+msgid "Pixel margin between slides in carousel."
+msgstr "Pixelmarge tussen sliders in carousel."
+
+#: ml-slider.php:1367
+msgid "Carousel margin"
+msgstr "Carousel marge"
+
+#: ml-slider.php:1359
+msgid "Display multiple slides at once. Slideshow output will be 100% wide."
+msgstr "Meerdere sliders tegelijk weergeven. De uitvoer van de slide voorstelling is 100% breed."
+
+#: ml-slider.php:1356
+msgid "Carousel mode"
+msgstr "Carousel modus"
+
+#: ml-slider.php:1351
+msgid "Smart Crop ensures your responsive slides are cropped to a ratio that results in a consistent slideshow size"
+msgstr "Slim bijsnijden garandeert dat de slides optimaal worden bijgesneden, zodat deze in het juiste formaat worden weergegeven"
+
+#: ml-slider.php:1349
+msgid "Disabled (Smart Pad)"
+msgstr "Uitgeschakeld (Smart Pad)"
+
+#: ml-slider.php:1348
 msgid "Disabled"
 msgstr "Uitgeschakeld"
 
-#: inc/slide/metaslide.image.class.php:337
-msgid "SEO"
-msgstr "SEO"
+#: ml-slider.php:1347
+msgid "Standard"
+msgstr "Standaard"
 
-#: ml-slider.php:1264
+#: ml-slider.php:1346
+msgid "Smart Crop"
+msgstr "Slim bijsnijden"
+
+#: ml-slider.php:1342
+msgid "Image Crop"
+msgstr "Afbeelding bijsnijden"
+
+#: ml-slider.php:1337
+msgid "Transition between slides automatically"
+msgstr "Automatische overgang tussen sliders"
+
+#: ml-slider.php:1334
+msgid "Auto play"
+msgstr "Automatisch afspelen"
+
+#: ml-slider.php:1329
+msgid "Center align the slideshow"
+msgstr "De slider voorstelling centreren"
+
+#: ml-slider.php:1326
+msgid "Center align"
+msgstr "In het midden uitlijnen"
+
+#: ml-slider.php:1321
+msgid "Stretch the slideshow output to fill it's parent container"
+msgstr "Rek de slideshow-uitvoer op om de container te vullen"
+
+#: ml-slider.php:1309
+msgid "Advanced Settings"
+msgstr "Geavanceerde instellingen"
+
+#: ml-slider.php:1269
+msgid "Dots"
+msgstr "Stippen"
+
+#: ml-slider.php:1268
+msgid "Hidden"
+msgstr "Verborgen"
+
+#: ml-slider.php:1266
+msgid "Show the slide navigation bullets"
+msgstr "Slide-navigatiebalk weergeven"
+
+#: ml-slider.php:1263
+msgid "Navigation"
+msgstr "Navigatie"
+
+#: ml-slider.php:1258
+msgid "Show the previous/next arrows"
+msgstr "Vorige/volgende pijlen weergeven"
+
+#: ml-slider.php:1255
+msgid "Arrows"
+msgstr "Pijlen"
+
+#: ml-slider.php:1249
+msgid "Slide"
+msgstr "Dia"
+
+#: ml-slider.php:1248
+msgid "Box Rain Grow Reverse"
+msgstr "Box Rain Grow Reverse"
+
+#: ml-slider.php:1247
+msgid "Box Rain Reverse"
+msgstr "Box Rain Omgekeerd"
+
+#: ml-slider.php:1246
+msgid "Box Rain"
+msgstr "Box Rain"
+
+#: ml-slider.php:1245
+msgid "Box Random"
+msgstr "Willekeurig vak"
+
+#: ml-slider.php:1244
+msgid "Slide In Left"
+msgstr "Schuif in Links"
+
+#: ml-slider.php:1243
+msgid "Slide In Right"
+msgstr "Schuif in Rechts"
+
+#: ml-slider.php:1242
+msgid "Fade"
+msgstr "Vervagen"
+
+#: ml-slider.php:1241
+msgid "Fold"
+msgstr "Samenvouwen"
+
+#: ml-slider.php:1240
+msgid "Slide Up Down Left"
+msgstr "Slide omhoog omlaag links"
+
+#: ml-slider.php:1239
 msgid "Slice Up Down"
-msgstr "Slice omhoog en omlaag"
+msgstr "Slide omhoog omlaag"
 
-#: ml-slider.php:1262
+#: ml-slider.php:1238
+msgid "Slide Up Left"
+msgstr "Slide omhoog links"
+
+#: ml-slider.php:1237
 msgid "Slice Up"
-msgstr "Slice omhoog"
+msgstr "Slide omhoog"
 
-#: ml-slider.php:1259
+#: ml-slider.php:1236
+msgid "Slide Down"
+msgstr "Slide omlaag"
+
+#: ml-slider.php:1235
+msgid "Straight"
+msgstr "Recht"
+
+#: ml-slider.php:1234
 msgid "Rain"
 msgstr "Regen"
 
-#: ml-slider.php:1258
+#: ml-slider.php:1233
 msgid "Swirl"
-msgstr "Werveling"
+msgstr "Wervelend"
 
-#: ml-slider.php:1253
+#: ml-slider.php:1232 ml-slider.php:1384
+msgid "Random"
+msgstr "Willekeurig"
+
+#: ml-slider.php:1230
+msgid "Slide transition effect"
+msgstr "Overgangseffect slide"
+
+#: ml-slider.php:1228
 msgid "Effect"
 msgstr "Effect"
 
-#: ml-slider.php:1234 ml-slider.php:1247 ml-slider.php:1396
+#: ml-slider.php:1221
+msgid "Slideshow height"
+msgstr "Slideshow-hoogte"
+
+#: ml-slider.php:1219 ml-slider.php:1465
+msgid "Height"
+msgstr "Hoogte"
+
+#: ml-slider.php:1209 ml-slider.php:1222 ml-slider.php:1371
 msgid "px"
 msgstr "px"
 
-#: admin/views/slides/tabs/crop.php:9
-msgid "Top Right"
-msgstr "Boven rechts"
+#: ml-slider.php:1208 admin/assets/js/gutenberg/components/block-edit.js:61
+#: admin/assets/js/gutenberg/components/block-edit.js:86
+msgid "Slideshow width"
+msgstr "Slideshow-breedte"
 
-#: admin/Pages.php:74
+#: ml-slider.php:1206 ml-slider.php:1452
+msgid "Width"
+msgstr "Breedte"
+
+#: admin/views/pages/parts/toolbar.php:122 admin/assets/dist/js/app.js:2
+msgid "Save"
+msgstr "Opslaan"
+
+#: ml-slider.php:381 admin/views/pages/settings.php:47
+msgid "Settings"
+msgstr "Instellingen"
+
+#: admin/views/pages/parts/toolbar.php:37
+msgid "Add Slide"
+msgstr "Nieuwe slide"
+
+#: admin/views/pages/parts/toolbar.php:68
+msgid "Add a new slideshow"
+msgstr "Een nieuwe slider voorstelling toevoegen"
+
+#: ml-slider.php:496
+msgid "Image"
+msgstr "Afbeelding"
+
+#: admin/Pages.php:87
+msgid "Caution: This setting is for advanced developers only. If you're unsure, leave it checked."
+msgstr "Let op: Deze instelling is alleen bedoeld voor ervaren ontwikkelaars. Bij twijfel aangevinkt laten."
+
+#: admin/Pages.php:80
 msgid "Select replacement image"
-msgstr "Selecteer vervangende afbeelding"
+msgstr "Vervangende afbeelding selecteren"
 
-#: inc/slide/metaslide.image.class.php:355
+#: ml-slider.php:1834
+msgid "Documentation"
+msgstr "Documentatie"
+
+#: inc/slide/metaslide.image.class.php:370
 msgid "Crop"
-msgstr "Uitsnijden"
+msgstr "Bijsnijden"
 
 #: admin/views/slides/tabs/crop.php:15
 msgid "Bottom Right"
 msgstr "Onder rechts"
+
+#: admin/views/slides/tabs/crop.php:14
+msgid "Bottom Center"
+msgstr "Midden Onder"
 
 #: admin/views/slides/tabs/crop.php:13
 msgid "Bottom Left"
@@ -300,15 +1250,23 @@ msgstr "Onder links"
 
 #: admin/views/slides/tabs/crop.php:12
 msgid "Center Right"
-msgstr "Midden rechts"
+msgstr "Midden Rechts"
 
 #: admin/views/slides/tabs/crop.php:11
 msgid "Center Center"
-msgstr "Midden gecentreerd"
+msgstr "Gecentreerd Midden"
 
 #: admin/views/slides/tabs/crop.php:10
 msgid "Center Left"
-msgstr "Midden links"
+msgstr "Links in het midden"
+
+#: admin/views/slides/tabs/crop.php:9
+msgid "Top Right"
+msgstr "Boven rechts"
+
+#: admin/views/slides/tabs/crop.php:8
+msgid "Top Center"
+msgstr "Middenboven"
 
 #: admin/views/slides/tabs/crop.php:7
 msgid "Top Left"
@@ -316,193 +1274,66 @@ msgstr "Boven links"
 
 #: admin/views/slides/tabs/crop.php:3
 msgid "Crop Position"
-msgstr "Positie uitsnijden"
+msgstr "Uitsnijpositie"
 
-#: inc/slide/metaslide.image.class.php:81
-msgid "Failed to add slide. Slide is not an image."
-msgstr "Toevoegen slide mislukt. Slide is geen afbeelding."
+#: inc/slide/metaslide.image.class.php:353
+msgid "SEO"
+msgstr "SEO"
 
-#: ml-slider.php:1270
-msgid "Box Random"
-msgstr "Box willekeurig"
-
-#: ml-slider.php:1271
-msgid "Box Rain"
-msgstr "Box regen"
-
-#: ml-slider.php:1272
-msgid "Box Rain Reverse"
-msgstr "Box regen omgekeerd"
-
-#: ml-slider.php:1273
-msgid "Box Rain Grow Reverse"
-msgstr "Box regen toenemend omgekeerd"
-
-#: ml-slider.php:1274
-msgid "Slide"
-msgstr "Slide"
-
-#: ml-slider.php:1294
-msgid "Dots"
-msgstr "Punten"
-
-#: ml-slider.php:1346
-msgid "Stretch the slideshow output to fill it's parent container"
-msgstr "Slideshow-uitvoer uitrekken om zijn hoofdcontainer te vullen"
-
-#: ml-slider.php:1367
-msgid "Image Crop"
-msgstr "Afbeelding uitsnijden"
-
-#: ml-slider.php:1371
-msgid "Smart Crop"
-msgstr "Slim uitsnijden"
-
-#: ml-slider.php:1374
-msgid "Disabled (Smart Pad)"
-msgstr "Uitgeschakeld (Smart Pad)"
-
-#: ml-slider.php:1392
-msgid "Carousel margin"
-msgstr "Carousel-marge"
-
-#: ml-slider.php:1395
-msgid "Pixel margin between slides in carousel."
-msgstr "Pixel-marge tussen slides in carousel."
-
-#: ml-slider.php:1384
-msgid "Display multiple slides at once. Slideshow output will be 100% wide."
-msgstr "Toon meerdere slides tegelijkertijd. Breedte van de slideshow uitvoer is 100%."
-
-#: ml-slider.php:1464 ml-slider.php:1466
-msgid "Number of slices"
-msgstr "Aantal slices"
-
-#: ml-slider.php:1477 ml-slider.php:1479 ml-slider.php:1490 ml-slider.php:1492
-msgid "Number of squares"
-msgstr "Aantal squares"
-
-#: ml-slider.php:1540
-msgid "Square delay"
-msgstr "Vertraging square"
-
-#: ml-slider.php:1542
-msgid "Delay between squares in ms"
-msgstr "Vertraging tussen squares in ms"
-
-#: admin/Pages.php:81
-msgid "Caution: This setting is for advanced developers only. If you're unsure, leave it checked."
-msgstr "Let op: deze instellingen zijn alleen bedoeld voor ervaren ontwikkelaars. Bij twijfel aangevinkt laten."
-
-#: ml-slider.php:1255
-msgid "Slide transition effect"
-msgstr "Slide overgangseffect"
-
-#: ml-slider.php:1261
-msgid "Slide Down"
-msgstr "Slide omlaag"
-
-#: ml-slider.php:1263
-msgid "Slide Up Left"
-msgstr "Slide omhoog en links"
-
-#: ml-slider.php:1265
-msgid "Slide Up Down Left"
-msgstr "Slide omhoog, omlaag en links"
-
-#: ml-slider.php:1266
-msgid "Fold"
-msgstr "Vouwen"
-
-#: ml-slider.php:1267
-msgid "Fade"
-msgstr "Vervagen"
-
-#: ml-slider.php:1268
-msgid "Slide In Right"
-msgstr "Slide in van rechts"
-
-#: ml-slider.php:1269
-msgid "Slide In Left"
-msgstr "Slide in van links"
-
-#: ml-slider.php:1283
-msgid "Show the previous/next arrows"
-msgstr "Toon de vorige/volgende pijlen"
-
-#: ml-slider.php:1334
-msgid "Advanced Settings"
-msgstr "Geavanceerde instellingen"
-
-#: ml-slider.php:1359
-msgid "Auto play"
-msgstr "Automatisch starten"
-
-#: ml-slider.php:1381
-msgid "Carousel mode"
-msgstr "Carousel-modus"
-
-#: ml-slider.php:1417
-msgid "Hover pause"
-msgstr "Pauzeren bij hoveren"
-
-#: ml-slider.php:1420
-msgid "Pause the slideshow when hovering over slider, then resume when no longer hovering."
-msgstr "Pauzeer de slideshow zodra cursor over de slider hangt en hervat de slideshow wanneer deze wordt verwijderd."
-
-#: ml-slider.php:1428
-msgid "Reverse the animation direction"
-msgstr "Keer de animatie-richting om"
-
-#: ml-slider.php:1438
-msgid "Slide delay"
-msgstr "Slidevertraging"
-
-#: ml-slider.php:1451
-msgid "Animation speed"
-msgstr "Animatie-snelheid"
-
-#: ml-slider.php:1453
-msgid "Set the speed of animations, in milliseconds"
-msgstr "Animatie-snelheid instellen, in milliseconden"
-
-#: ml-slider.php:1498
-msgid "Slide direction"
-msgstr "Sliderichting"
-
-#: ml-slider.php:1500
-msgid "Select the sliding direction"
-msgstr "Selecteer sliderichting"
-
-#: ml-slider.php:1512
-msgid "Animation easing effect"
-msgstr "Versoepeling animatie-effect"
-
-#: ml-slider.php:1519
-msgid "Previous text"
-msgstr "Vorige tekst"
-
-#: ml-slider.php:1521
-msgid "Set the text for the 'previous' direction item"
-msgstr "Tekst instellen voor het 'vorige' item"
-
-#: ml-slider.php:1527
-msgid "Next text"
-msgstr "Volgende tekst"
-
-#: ml-slider.php:1529
-msgid "Set the text for the 'next' direction item"
-msgstr "Tekst instellen voor het 'volgende' item"
-
-#: ml-slider.php:1699 inc/metaslider.widget.class.php:119
-#: admin/assets/js/app-3-16-3.js:38889 admin/assets/js/app-3-16-3.js:39124
-msgid "No slideshows found"
-msgstr "Geen slideshows gevonden"
-
-#: admin/views/slides/tabs/seo.php:3
-msgid "Image Title Text"
-msgstr "Titeltekst van afbeelding"
+#: inc/slide/metaslide.image.class.php:349
+msgid "General"
+msgstr "Algemeen"
 
 #: admin/views/slides/tabs/seo.php:13
 msgid "Image Alt Text"
-msgstr "Alternatieve tekst van afbeelding"
+msgstr "Afbeelding alternatieve tekst"
+
+#: admin/views/slides/tabs/seo.php:3
+msgid "Image Title Text"
+msgstr "Afbeelding titel tekst"
+
+#: inc/slide/metaslide.image.class.php:338
+msgid "Warning: The image data does not exist. Please re-upload the image."
+msgstr "Waarschuwing: de afbeeldingsgegevens bestaan niet. Upload de afbeelding opnieuw."
+
+#: admin/Pages.php:71
+msgid "New Window"
+msgstr "Nieuw Scherm"
+
+#: admin/Pages.php:69 admin/views/slides/tabs/general.php:27
+msgid "URL"
+msgstr "URL"
+
+#: admin/Pages.php:70 admin/assets/dist/js/app.js:2
+msgid "Caption"
+msgstr "Onderschrift"
+
+#: inc/slide/metaslide.image.class.php:258
+msgid "Image Slide"
+msgstr "Afbeelding slider"
+
+#: inc/slide/metaslide.image.class.php:87
+msgid "Failed to add slide. Slide is not an image."
+msgstr "Kan geen slide toevoegen. Slide is geen afbeelding."
+
+#: inc/slide/metaslide.class.php:342
+msgid "Delete slide"
+msgstr "Slide verwijderen"
+
+#: ml-slider.php:1678 inc/metaslider.widget.class.php:119
+#: admin/assets/dist/js/app.js:2
+msgid "No slideshows found"
+msgstr "Geen slider voorstellingen gevonden"
+
+#: inc/metaslider.widget.class.php:109
+msgid "Select Slider:"
+msgstr "Selecteer"
+
+#: inc/metaslider.widget.class.php:106
+msgid "Title:"
+msgstr "Titel:"
+
+#. Plugin Name of the plugin
+#. Author of the plugin
+msgid "MetaSlider"
+msgstr "MetaSlider"

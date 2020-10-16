@@ -11,7 +11,7 @@ if(!is_array($booking_options)) $booking_options = array();
 
 //Compatibility with Rank Math
 $rank_math_options = '';
-include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+include_once(ABSPATH . 'wp-admin/includes/plugin.php');
 if(is_plugin_active('schema-markup-rich-snippets/schema-markup-rich-snippets.php')) $rank_math_options = get_post_meta(get_the_ID(), 'rank_math_rich_snippet', true);
 ?>
 <div class="mec-wrap <?php echo $event_colorskin; ?> clearfix <?php echo $this->html_class; ?>" id="mec_skin_<?php echo $this->uniqueid; ?>">
@@ -99,7 +99,7 @@ if(is_plugin_active('schema-markup-rich-snippets/schema-markup-rich-snippets.php
             <!-- Local Time Module -->
             <?php  if($single->found_value('local_time', $settings) == 'on') echo $this->main->module('local-time.details', array('event'=>$event)); ?>
             
-            <?php if ( $single->found_value('event_location', $settings) == 'on' || $single->found_value('event_categories', $settings) == 'on' || $single->found_value('more_info', $settings) == 'on' ) : ?>
+            <?php if($single->found_value('event_location', $settings) == 'on' || $single->found_value('event_categories', $settings) == 'on' || $single->found_value('more_info', $settings) == 'on'): ?>
             <div class="mec-event-meta mec-color-before mec-frontbox <?php if (empty($event->data->locations[$event->data->meta['mec_location_id']]) || $single->found_value('event_location', $settings) == '') echo 'mec-util-hidden'; ?>">
                 
                 <?php
@@ -297,7 +297,7 @@ if(is_plugin_active('schema-markup-rich-snippets/schema-markup-rich-snippets.php
             
             <!-- Booking Module -->
             <?php if($this->main->is_sold($event) and count($event->dates) <= 1): ?>
-            <div id="mec-events-meta-group-booking-<?php echo $this->uniqueid; ?>" class="mec-sold-tickets warning-msg"><?php _e('Sold out!', 'wpl'); do_action( 'mec_booking_sold_out',$event, null,null,array($event->date) );?> </div>
+            <div id="mec-events-meta-group-booking-<?php echo $this->uniqueid; ?>" class="mec-sold-tickets warning-msg"><?php _e('Sold out!', 'modern-events-calendar-lite'); do_action( 'mec_booking_sold_out',$event, null,null,array($event->date) );?> </div>
             <?php elseif($this->main->can_show_booking_module($event)): ?>
             <?php $data_lity_class = ''; if( isset($settings['single_booking_style']) and $settings['single_booking_style'] == 'modal' ) $data_lity_class = 'lity-hide '; ?>
             <div id="mec-events-meta-group-booking-<?php echo $this->uniqueid; ?>" class="<?php echo $data_lity_class; ?>mec-events-meta-group mec-events-meta-group-booking">
@@ -322,10 +322,12 @@ if(is_plugin_active('schema-markup-rich-snippets/schema-markup-rich-snippets.php
     </article>
 
     <?php $this->display_related_posts_widget($event->ID); ?>
+    <?php $this->display_next_previous_events($event); ?>
+
 </div>
 <?php
     // MEC Schema
-    if ( $rank_math_options != 'event') do_action('mec_schema', $event);
+    if($rank_math_options != 'event') do_action('mec_schema', $event);
 ?>
 <script>
 jQuery( ".mec-speaker-avatar a" ).click(function(e)

@@ -90,27 +90,6 @@ function wp_bootstrap_starter_customize_register( $wp_customize ) {
     ) ) );
 
 
-    /*$wp_customize->add_setting( 'preset_color_scheme_setting', array(
-        'default'   => 'default',
-        'type'       => 'theme_mod',
-        'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'wp_filter_nohtml_kses',
-    ) );
-    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'preset_color_scheme_setting', array(
-        'label' => __( 'Color Scheme', 'wp-bootstrap-starter' ),
-        'section'    => 'typography',
-        'settings'   => 'preset_color_scheme_setting',
-        'type'    => 'select',
-        'choices' => array(
-            'default' => 'Default',
-            'red' => 'Red',
-            'green' => 'Green',
-            'orange' => 'Orange',
-            'pink' => 'Pink',
-        )
-    ) ) );*/
-
-
     /*Banner*/
     $wp_customize->add_section(
         'header_image',
@@ -253,10 +232,13 @@ add_action( 'customize_register', 'wp_bootstrap_starter_customize_register' );
 
 add_action( 'wp_head', 'wp_bootstrap_starter_customizer_css');
 function wp_bootstrap_starter_customizer_css()
+
 {
+    $header_bg_color = get_theme_mod('header_bg_color_setting', '#fff');
+
     ?>
     <style type="text/css">
-        #page-sub-header { background: <?php echo get_theme_mod('header_bg_color_setting', '#fff'); ?>; }
+        #page-sub-header { background: <?php echo esc_attr( $header_bg_color ); ?>; }
     </style>
     <?php
 }

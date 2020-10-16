@@ -2,12 +2,12 @@
 # This file is distributed under the same license as the Plugins - WordPress Gallery Plugin &#8211; NextGEN Gallery - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-08-08 14:54:09+0000\n"
+"PO-Revision-Date: 2020-05-26 14:18:22+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/2.4.0-alpha\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
 "Language: nl\n"
 "Project-Id-Version: Plugins - WordPress Gallery Plugin &#8211; NextGEN Gallery - Stable (latest release)\n"
 
@@ -775,6 +775,18 @@ msgstr "Geef het een goede waardering op WordPress.org"
 #: products/photocrati_nextgen/modules/ngglegacy/admin/overview.php:112
 msgid "Please click \"Works\" on WordPress.org"
 msgstr "Klik op \"Werkt\" op WordPress.org"
+
+#: products/photocrati_nextgen/modules/ngglegacy/admin/overview.php:107
+msgid "This plugin is primarily developed, maintained, supported and documented by <a href=\"%s\" target=\"_blank\">Photocrati Media</a> with a lot of love & effort. Any kind of contribution would be highly appreciated. Thanks!"
+msgstr "Deze plugin wordt primair ontwikkeld, onderhouden, ondersteund en gedocumenteerd door<a href=\"%s\" target=\"_blank\">Photocrati Media</a>met veel liefde en moeite. Elke vorm van bijdrage wordt zeer op prijs gesteld. Bedankt!"
+
+#: products/photocrati_nextgen/modules/ngglegacy/admin/overview.php:99
+msgid "<strong>EXTENDING NEXTGEN?</strong> There are many third party plugins that add displays and functionality for NextGEN Gallery. See our <a href='http://www.nextgen-gallery.com/nextgen-gallery-extension-plugins/'>Complete List of NextGEN Extension  Plugins</a>."
+msgstr "<strong>NEXTGEN VERLENGEN?</strong>Er zijn veel third party plugins die schermen toevoegen en functionaliteit voor NextGEN Gallery . Zie onze<a href='http://www.nextgen-gallery.com/nextgen-gallery-extension-plugins/'>Volledige lijst met NextGEN uitbreidingsplugins</a>."
+
+#: products/photocrati_nextgen/modules/ngglegacy/admin/overview.php:98
+msgid "<strong>NEED  HELP?</strong> If you need help or assistance please visit the <a href='http://wordpress.org/support/plugin/nextgen-gallery'>NextGEN Gallery forums on WordPress.org</a>. Please note that we actively monitor and  participate in the forums, but given that NextGEN Gallery is a free  product, we don't guarantee replies to support queries."
+msgstr "<strong>HULP NODIG?</strong>Als je hulp of hulp nodig hebt, bezoek dan de<a href='http://wordpress.org/support/plugin/nextgen-gallery'>NextGEN Gallery  forums op WordPress.org</a>. Let op: we houden actief toezicht op en nemen deel aan de forums , maar aangezien NextGEN Gallery een gratis product is, kunnen we geen antwoorden op ondersteunde vragen garanderen."
 
 #: products/photocrati_nextgen/modules/ngglegacy/admin/overview.php:97
 msgid " It is developed and supported by Photocrati Media. We'd like to offer a special thanks to Alex Rabe, who first developed the plugin and maintained it through 2011."
@@ -2516,8 +2528,16 @@ msgid "Browse images without reloading the page."
 msgstr "Blader door afbeeldingen zonder de pagina te herladen."
 
 #: products/photocrati_nextgen/modules/nextgen_basic_gallery/package.module.nextgen_basic_gallery.php:374
+msgid "When active each image in the gallery will link to an imagebrowser display and lightbox effects will not be applied."
+msgstr "Indien actief, zal elke afbeelding in de galerij linken naar een afbeelding browser display en zullen de lichtbak effecten niet worden toegepast."
+
+#: products/photocrati_nextgen/modules/nextgen_basic_gallery/package.module.nextgen_basic_gallery.php:374
 msgid "Use imagebrowser effect"
 msgstr "Gebruik imagebrowser effect"
+
+#: products/photocrati_nextgen/modules/nextgen_basic_gallery/package.module.nextgen_basic_gallery.php:370
+msgid "If pagination is used this option will show all images in the modal window (Thickbox, Lightbox etc.) This increases page load."
+msgstr "Als paginering wordt gebruikt, toont deze optie alle afbeeldingen in het modale venster (Thickbox, Lightbox etc.). Dit verhoogt het laden van de pagina ."
 
 #: products/photocrati_nextgen/modules/nextgen_basic_gallery/package.module.nextgen_basic_gallery.php:370
 msgid "Add Hidden Images"
@@ -2546,6 +2566,10 @@ msgstr "Thumbnail linktekst"
 #: products/photocrati_nextgen/modules/nextgen_basic_gallery/package.module.nextgen_basic_gallery.php:304
 msgid "Show thumbnail link"
 msgstr "Toon thumbnail link"
+
+#: products/photocrati_nextgen/modules/nextgen_basic_gallery/package.module.nextgen_basic_gallery.php:294
+msgid "Certain themes may allow images to flow over their container if this setting is too large"
+msgstr "Bepaalde thema's kunnen het toestaan dat afbeeldingen buiten hun container gaan als deze instelling te groot is"
 
 #: products/photocrati_nextgen/modules/nextgen_basic_gallery/package.module.nextgen_basic_gallery.php:294
 msgid "Maximum dimensions"
@@ -2713,6 +2737,10 @@ msgid "Thumbnail dimensions"
 msgstr "Thumbnail afmetingen"
 
 #: products/photocrati_nextgen/modules/nextgen_admin/package.module.nextgen_admin.php:317
+msgid "This does not affect existing thumbnails; overriding the thumbnail settings will create an additional set of thumbnails. To change the size of existing thumbnails please visit 'Manage Galleries' and choose 'Create new thumbnails' for all images in the gallery."
+msgstr "Dit heeft geen invloed op bestaande miniaturen; het overschrijven van de miniatuur instellingen zal een extra set miniaturen creëren . Om de grootte van bestaande miniaturen te wijzigen, ga je naar 'Galerijen beheren' en kies je 'Nieuwe miniaturen maken ' voor alle  afbeeldingen in de galerij ."
+
+#: products/photocrati_nextgen/modules/nextgen_admin/package.module.nextgen_admin.php:317
 msgid "Override thumbnail settings"
 msgstr "Overschrijf instellingen voor thumbnails"
 
@@ -2741,6 +2769,10 @@ msgstr "Een nieuwe galerij aanmaken"
 #: products/photocrati_nextgen/modules/nextgen_addgallery_page/templates/import_folder.php:62
 msgid "Done! Successfully imported {count} images. <a href=\"%s\" target=\"_blank\">Manage gallery</a>"
 msgstr "Voltooid. {count} afbeeldingen geïmporteerd. <a href=\"%s\" target=\"_blank\">Beheer galerij</a>"
+
+#: products/photocrati_nextgen/modules/nextgen_addgallery_page/templates/import_folder.php:5
+msgid "Caution: If you keep images in the original folder and later delete the gallery, the images in that folder might be deleted depending on your settings."
+msgstr "Let op: Als je afbeeldingen in de oorspronkelijke map bewaart en later de galerij verwijdert, kunnen de afbeeldingen in die map worden verwijderd, afhankelijk van jouw instellingen."
 
 #: products/photocrati_nextgen/modules/nextgen_addgallery_page/templates/import_folder.php:5
 msgid "Keep images in original location."

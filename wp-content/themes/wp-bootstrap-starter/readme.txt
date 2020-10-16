@@ -58,6 +58,20 @@ WP Bootstrap Starter includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
+= 3.3.5 - October 13, 2020 =
+* FontAwesome issue fix https://wordpress.org/support/topic/font-awesome-broken-with-new-version-12-10-2020/
+
+= 3.3.4 - October 12, 2020 =
+* Update the stylesheet information
+* Remove old commented codes on the files
+* Add escape codes on customizer.php and header.php
+* Implement wp_body_open on the header 
+* Remove map files of Bootstrap
+* Change site_url() or get_site_url() to home_url()
+* Update the FontAwesome to v5.15.1 https://wordpress.org/support/topic/update-font-awsome/
+* Change the <main> tag to <div> tag to prevent issues from HTML Validator https://wordpress.org/support/topic/validation-error-main-element-and-section-element/
+* Address the issue with regard to navwalker https://wordpress.org/support/topic/version-3-3-3-breaks-wpml-language-switcher/
+
 = 3.3.3 - March 02, 2020 =
 * Update the wp_bootstrap_navwalker to v4.3.0
 * /inc/wp_bootstrap_navwalker.php

@@ -16,29 +16,62 @@ class MEC_wc extends MEC_base
     {
     }
 
-    public function cart($event_id, $date, $tickets)
+    public function cart($event_id, $date, $tickets, $transaction_id = NULL)
     {
         $db = $this->getDB();
 
-        foreach($tickets as $ticket_id => $count)
+        // Added to cart after ticket selection
+        if(!$transaction_id)
         {
-            if(trim($ticket_id) == '') continue;
+            foreach($tickets as $ticket_id => $count)
+            {
+                if(trim($ticket_id) == '') continue;
 
-            $ticket_key = $event_id.':'.$ticket_id;
+                $ticket_key = $event_id.':'.$ticket_id;
 
-            // Get Product ID
-            $product_id = $db->select("SELECT `post_id` FROM `#__postmeta` WHERE `meta_key`='mec_ticket' AND `meta_value`='".$ticket_key."'", 'loadResult');
+                // Get Product ID
+                $product_id = $db->select("SELECT `post_id` FROM `#__postmeta` WHERE `meta_key`='mec_ticket' AND `meta_value`='".$ticket_key."'", 'loadResult');
 
-            // Create Product if Doesn't Exists
-            if(!$product_id) $product_id = $this->create($event_id, $ticket_id);
-            // Update Existing Product
-            else $this->update($product_id, $event_id, $ticket_id);
+                // Create Product if Doesn't Exists
+                if(!$product_id) $product_id = $this->create($event_id, $ticket_id);
+                // Update Existing Product
+                else $this->update($product_id, $event_id, $ticket_id);
 
-            // Add to Cart
-            WC()->cart->add_to_cart($product_id, $count, 0, array(), array(
-                'mec_event_id' => $event_id,
-                'mec_date' => $date,
-            ));
+                // Add to Cart
+                WC()->cart->add_to_cart($product_id, $count, 0, array(), array(
+                    'mec_event_id' => $event_id,
+                    'mec_date' => $date,
+                ));
+            }
+        }
+        // Added to cart after MEC booking form
+        else
+        {
+            foreach($tickets as $info)
+            {
+                $ticket_id = isset($info['id']) ? $info['id'] : '';
+                if(trim($ticket_id) == '') continue;
+
+                $ticket_key = $event_id.':'.$ticket_id;
+
+                // Get Product ID
+                $product_id = $db->select("SELECT `post_id` FROM `#__postmeta` WHERE `meta_key`='mec_ticket' AND `meta_value`='".$ticket_key."'", 'loadResult');
+
+                // Create Product if Doesn't Exists
+                if(!$product_id) $product_id = $this->create($event_id, $ticket_id);
+                // Update Existing Product
+                else $this->update($product_id, $event_id, $ticket_id);
+
+                // Ticket Count
+                $count = isset($info['count']) ? $info['count'] : 1;
+
+                // Add to Cart
+                WC()->cart->add_to_cart($product_id, $count, 0, array(), array(
+                    'mec_event_id' => $event_id,
+                    'mec_date' => $date,
+                    'mec_transaction_id' => $transaction_id,
+                ));
+            }
         }
 
         return $this;
@@ -105,6 +138,7 @@ class MEC_wc extends MEC_base
         {
             if(isset($item->legacy_values['mec_event_id'])) wc_add_order_item_meta($item_id, 'mec_event_id', $item->legacy_values['mec_event_id']);
             if(isset($item->legacy_values['mec_date'])) wc_add_order_item_meta($item_id, 'mec_date', $item->legacy_values['mec_date']);
+            if(isset($item->legacy_values['mec_transaction_id'])) wc_add_order_item_meta($item_id, 'mec_transaction_id', $item->legacy_values['mec_transaction_id']);
         }
     }
 
@@ -175,13 +209,15 @@ class MEC_wc extends MEC_base
         {
             $event_id = wc_get_order_item_meta($item_id, 'mec_event_id', true);
             $date = wc_get_order_item_meta($item_id, 'mec_date', true);
+            $transaction_id = wc_get_order_item_meta($item_id, 'mec_transaction_id', true);
 
             if(!trim($event_id) or !trim($date)) continue;
-
-            $product_id = $item->get_product_id();
-            if(!isset($mec[$event_id])) $mec[$event_id] = array('date' => '', 'product_ids' => array());
+            if(!isset($mec[$event_id])) $mec[$event_id] = array('date' => '', 'product_ids' => array(), 'transaction_id' => '');
 
             $mec[$event_id]['date'] = $date;
+            $mec[$event_id]['transaction_id'] = $transaction_id;
+
+            $product_id = $item->get_product_id();
             for($i = 1; $i <= $item->get_quantity(); $i++) $mec[$event_id]['product_ids'][] = $product_id;
         }
 
@@ -202,54 +238,78 @@ class MEC_wc extends MEC_base
         $book_ids = array();
         foreach($mec as $event_id => $b)
         {
-            $date = $b['date'];
-            $product_ids = $b['product_ids'];
-
-            $event_tickets = get_post_meta($event_id, 'mec_tickets', true);
+            $transaction_id = isset($b['transaction_id']) ? $b['transaction_id'] : 0;
 
             $tickets = array();
-            $raw_tickets = array();
-
-            foreach($product_ids as $product_id)
+            if(!$transaction_id)
             {
-                $key = get_post_meta($product_id, 'mec_ticket', true);
-                if(!trim($key)) continue;
+                $date = $b['date'];
+                $product_ids = $b['product_ids'];
 
-                list($e, $mec_ticket_id) = explode(':', $key);
+                $event_tickets = get_post_meta($event_id, 'mec_tickets', true);
 
-                if(!isset($raw_tickets[$mec_ticket_id])) $raw_tickets[$mec_ticket_id] = 1;
-                else $raw_tickets[$mec_ticket_id] += 1;
+                $raw_tickets = array();
+                foreach($product_ids as $product_id)
+                {
+                    $key = get_post_meta($product_id, 'mec_ticket', true);
+                    if(!trim($key)) continue;
 
-                $ticket = array();
-                $ticket['name'] = $order->get_formatted_billing_full_name();
-                $ticket['email'] = $order->get_billing_email();
-                $ticket['id'] = $mec_ticket_id;
-                $ticket['count'] = 1;
-                $ticket['reg'] = array();
-                $ticket['variations'] = array();
+                    list($e, $mec_ticket_id) = explode(':', $key);
 
-                $tickets[] = $ticket;
+                    if(!isset($raw_tickets[$mec_ticket_id])) $raw_tickets[$mec_ticket_id] = 1;
+                    else $raw_tickets[$mec_ticket_id] += 1;
+
+                    $ticket = array();
+                    $ticket['name'] = $order->get_formatted_billing_full_name();
+                    $ticket['email'] = $order->get_billing_email();
+                    $ticket['id'] = $mec_ticket_id;
+                    $ticket['count'] = 1;
+                    $ticket['reg'] = array();
+                    $ticket['variations'] = array();
+
+                    $tickets[] = $ticket;
+                }
+
+                // Calculate price of bookings
+                $price_details = $book->get_price_details($raw_tickets, $event_id, $event_tickets, array(), false);
+
+                $booking = array();
+                $booking['tickets'] = $tickets;
+                $booking['first_for_all'] = 1;
+                $booking['date'] = $date;
+                $booking['event_id'] = $event_id;
+                $booking['price_details'] = $price_details;
+                $booking['total'] = $price_details['total'];
+                $booking['discount'] = 0;
+                $booking['price'] = $price_details['total'];
+                $booking['coupon'] = NULL;
+
+                // Save Transaction
+                $transaction_id = $book->temporary($booking);
             }
-
-            // Calculate price of bookings
-            $price_details = $book->get_price_details($raw_tickets, $event_id, $event_tickets, array(), false);
-
-            $booking = array();
-            $booking['tickets'] = $tickets;
-            $booking['first_for_all'] = 1;
-            $booking['date'] = $date;
-            $booking['event_id'] = $event_id;
-            $booking['price_details'] = $price_details;
-            $booking['total'] = $price_details['total'];
-            $booking['discount'] = 0;
-            $booking['price'] = $price_details['total'];
-            $booking['coupon'] = NULL;
-
-            // Save Transaction
-            $transaction_id = $book->temporary($booking);
 
             // Transaction
             $transaction = $book->get_transaction($transaction_id);
+
+            // Apply Coupon
+            $coupons = $order->get_coupon_codes();
+            if(count($coupons))
+            {
+                $wc_discount = $order->get_total_discount();
+
+                $transaction['price_details']['details'][] = array(
+                    'amount' => $wc_discount,
+                    'description' => __('Discount by WC Coupon', 'modern-events-calendar-lite'),
+                    'type' => 'discount',
+                    'coupon' => implode(', ', $coupons)
+                );
+
+                $transaction['discount'] = $wc_discount;
+                $transaction['price'] = $order->get_total();
+                $transaction['coupon'] = implode(', ', $coupons);
+
+                $book->update_transaction($transaction_id, $transaction);
+            }
 
             // Attendees
             $attendees = isset($transaction['tickets']) ? $transaction['tickets'] : $tickets;
@@ -296,6 +356,9 @@ class MEC_wc extends MEC_base
             update_post_meta($book_id, 'mec_gateway', 'MEC_gateway_woocommerce');
             update_post_meta($book_id, 'mec_gateway_label', $gateway->label());
             update_post_meta($book_id, 'mec_order_id', $order_id);
+
+            // Add WC coupon code
+            if(count($coupons)) update_post_meta($book_id, 'mec_coupon_code', implode(', ', $coupons));
 
             $book_ids[] = $book_id;
 

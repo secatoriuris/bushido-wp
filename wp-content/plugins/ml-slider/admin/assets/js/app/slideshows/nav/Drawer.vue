@@ -321,7 +321,7 @@ export default {
 			return 0
 		},
 		clearCache() {
-			window.localStorage.removeItem('metaslider-vuex')
+			window.localStorage.removeItem('metaslider-vuex-' + this.siteId)
 			window.location.reload(true)
 		},
 		fetchAllSlideshows() {

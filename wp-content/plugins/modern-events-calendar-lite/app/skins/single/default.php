@@ -61,7 +61,7 @@ $bookings_limit_for_users = isset($booking_options['bookings_limit_for_users']) 
 
             <!-- Booking Module -->
             <?php if ( !empty($event->date) ): if($this->main->is_sold($event) and count($event->dates) <= 1): ?>
-            <div id="mec-events-meta-group-booking-<?php echo $this->uniqueid; ?>" class="mec-sold-tickets warning-msg"><?php _e('Sold out!', 'wpl'); do_action( 'mec_booking_sold_out',$event, null,null,array($event->date) );?> </div>
+            <div id="mec-events-meta-group-booking-<?php echo $this->uniqueid; ?>" class="mec-sold-tickets warning-msg"><?php _e('Sold out!', 'modern-events-calendar-lite'); do_action( 'mec_booking_sold_out',$event, null,null,array($event->date) );?> </div>
             <?php elseif($this->main->can_show_booking_module($event)): ?>
             <?php $data_lity_class = ''; if( isset($settings['single_booking_style']) and $settings['single_booking_style'] == 'modal' ) $data_lity_class = 'lity-hide '; ?>
             <div id="mec-events-meta-group-booking-<?php echo $this->uniqueid; ?>" class="<?php echo $data_lity_class; ?>mec-events-meta-group mec-events-meta-group-booking">
@@ -556,7 +556,10 @@ $bookings_limit_for_users = isset($booking_options['bookings_limit_for_users']) 
         </div>
         <?php endif; ?>
     </article>
+
     <?php $this->display_related_posts_widget($event->ID); ?>
+    <?php $this->display_next_previous_events($event); ?>
+
 </div>
 <?php
     // MEC Schema
@@ -564,7 +567,7 @@ $bookings_limit_for_users = isset($booking_options['bookings_limit_for_users']) 
 ?>
 <script>
 // Fix modal speaker in some themes
-jQuery( ".mec-speaker-avatar a" ).click(function(e)
+jQuery(".mec-speaker-avatar a").click(function(e)
 {
     e.preventDefault();
     var id =  jQuery(this).attr('href');
@@ -572,7 +575,8 @@ jQuery( ".mec-speaker-avatar a" ).click(function(e)
 });
 
 // Fix modal booking in some themes
-jQuery(window).on('load', function() {
+jQuery(window).on('load', function()
+{
     jQuery( ".mec-booking-button.mec-booking-data-lity" ).click(function(e)
     {
         e.preventDefault();

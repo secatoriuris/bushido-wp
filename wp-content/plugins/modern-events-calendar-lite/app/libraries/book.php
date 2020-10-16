@@ -609,8 +609,17 @@ class MEC_book extends MEC_base
         // Event Specification
         if($status === 1)
         {
-            $target_event = get_term_meta($coupon_id, 'target_event', true);
-            if(trim($target_event) and trim($event_id) and $target_event != $event_id)
+            $all_events = get_term_meta($coupon_id, 'target_event', true);
+            if(trim($all_events) == '') $all_events = 1;
+
+            $target_events = get_term_meta($coupon_id, 'target_events', true);
+            if(!is_array($target_events))
+            {
+                $target_events = array();
+                if($all_events and $all_events != 1) $target_events[] = $all_events;
+            }
+
+            if(!$all_events and is_array($target_events) and count($target_events) and !in_array($event_id, $target_events))
             {
                 $status = -3;
             }
@@ -901,6 +910,12 @@ class MEC_book extends MEC_base
         return get_post_meta($book_id, 'mec_transaction_id', true);
     }
 
+    public function get_book_id_transaction_id($transaction_id)
+    {
+        $db = $this->getDB();
+        return $db->select("SELECT `post_id` FROM `#__postmeta` WHERE `meta_key`='mec_transaction_id' AND `meta_value`='".$db->escape($transaction_id)."'", 'loadResult');
+    }
+
     public function get_ticket_price_label($ticket, $date, $event_id)
     {
         return $this->get_ticket_price_key($ticket, $date, $event_id, 'price_label');
@@ -958,20 +973,29 @@ class MEC_book extends MEC_base
 
     public function get_price_for_loggedin_users($event_id, $price, $type = 'price')
     {
+        if(!is_user_logged_in()) return $price;
+
         $booking_options = get_post_meta($event_id, 'mec_booking', true);
         if(!is_array($booking_options)) $booking_options = array();
 
+        $user = wp_get_current_user();
+
+        $roles = (array) $user->roles;
+        $role = isset($roles[0]) ? $roles[0] : 'subscriber';
+
         $loggedin_discount = isset($booking_options['loggedin_discount']) ? $booking_options['loggedin_discount'] : '';
-        if(trim($loggedin_discount) and is_numeric($loggedin_discount) and is_user_logged_in())
+        $role_discount = isset($booking_options['roles_discount_'.$role]) ? $booking_options['roles_discount_'.$role] : $loggedin_discount;
+
+        if(trim($role_discount) and is_numeric($role_discount))
         {
             if($type === 'price_label' and !is_numeric($price))
             {
                 $numeric = preg_replace("/[^0-9.]/", '', $price);
-                if(is_numeric($numeric)) $price = $this->main->render_price(($numeric - (($numeric * $loggedin_discount) / 100)));
+                if(is_numeric($numeric)) $price = $this->main->render_price(($numeric - (($numeric * $role_discount) / 100)));
             }
             else
             {
-                $price = $price - (($price * $loggedin_discount) / 100);
+                $price = $price - (($price * $role_discount) / 100);
             }
         }
 

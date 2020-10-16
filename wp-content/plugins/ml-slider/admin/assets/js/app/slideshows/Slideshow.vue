@@ -168,7 +168,7 @@ export default {
 			Slideshow.duplicate().then(response => {
 				this.notifySuccess('metaslider/duplicate-success', this.__('Duplicated successfully. Reloading...', 'ml-slider'), true)
 				setTimeout(() => {
-					localStorage.removeItem('metaslider-vuex')
+					localStorage.removeItem('metaslider-vuex-' + this.siteId)
 					window.location.replace(this.metasliderPage + '&id=' + response.data.data)
 				}, 1500)
 			}).catch(error => {
@@ -286,7 +286,7 @@ export default {
 					})
 				}
 			}]).then(result => {
-				localStorage.removeItem('metaslider-vuex')
+				localStorage.removeItem('metaslider-vuex-' + this.siteId)
 				if (!result.dismiss) {
 
 					// use replace becasue the resource is deleted

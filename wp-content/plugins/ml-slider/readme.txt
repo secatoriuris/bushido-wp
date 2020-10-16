@@ -2,7 +2,7 @@
 Contributors: matchalabs, DavidAnderson, dnutbourne, kbat82
 Tags: slideshow, slider, image slider, carousel, gallery, flexslider, wordpress slider, nivoslider, rotating banner, responsive slideshow, seo slideshow, unsplash
 Requires at least: 3.5
-Stable tag: 3.18.0
+Stable tag: 3.18.2
 Requires PHP: 5.2
 Tested up to: 5.5
 License: GPLv2 or later
@@ -166,6 +166,14 @@ See https://www.metaslider.com/documentation/image-cropping/
 6. Administration panel - selecting slides
 
 == Changelog ==
+
+= 3.18.2 - 2020/Oct/02 =
+
+* FIX: Scope slideshow cache to site (for multi-site support)
+
+= 3.18.1 - 2020/Sept/21 =
+
+* FIX: Remove Nivo loading gif and add back specificity
 
 = 3.18.0 - 2020/Sept/05 =
 

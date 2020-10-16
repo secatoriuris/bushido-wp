@@ -106,6 +106,7 @@ class MetaSlider_Admin_Pages extends MetaSliderPlugin
             'metaslider_admin_assets' => METASLIDER_ADMIN_ASSETS_URL,
             'metaslider_page' => admin_url('admin.php?page=metaslider'),
             'theme_editor_link' => admin_url('admin.php?page=metaslider-theme-editor'),
+            'site_id' => get_current_blog_id(),
             'supports_rest' => $is_rest_enabled,
             'locale' => $this->gutenberg_get_jed_locale_data('ml-slider'),
             'default_locale' => $this->gutenberg_get_jed_locale_data('default'),
