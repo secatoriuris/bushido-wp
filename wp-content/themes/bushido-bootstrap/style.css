@@ -29,6 +29,12 @@ Text Domain:	 bushido
 
     }
 
+    @font-face {
+        font-family: Odachi;
+        src: url(./fonts/Odachi.woff);
+        font-weight: normal;
+    }
+
 
     /*General*/
 
@@ -445,12 +451,13 @@ Text Domain:	 bushido
     }
 
     h1.entry-title {
-        font: 700 60px/60px "Lato", sans-serif;
+        font: 700 120px/120px "Odachi", sans-serif;
         letter-spacing: -0.06em;
         border-bottom: none;
         text-transform: uppercase;
         position: relative;
-        line-height: 60px;
+        line-height: 120px;
+        letter-spacing: 5px;
         padding-bottom: 0;
         color: var(--font-color);
     }
@@ -870,8 +877,8 @@ Text Domain:	 bushido
         }
 
         h1.entry-title {
-            font-size: 48px;
-            line-height: 41px;
+            font-size: 120px;
+            line-height: 120px;
         }
 
         .center-align {
