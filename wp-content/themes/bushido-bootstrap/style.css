@@ -96,34 +96,19 @@ Text Domain:	 bushido
 
     @media(min-width: 768px){
         .is-style-right-group {
-            width: calc((100vw - (100vw - 100%) / 2));
+            width: calc((100vw - (100vw - 100%) / 2) + 18px);
+            margin-left: -18px;
+            padding-right: calc((100vw - 100%) / 2)!important;
             border-image-width: 50px 0 50px 50px;
         }
 
         .is-style-left-group {
-            width: calc((100vw - (100vw - 100%) / 2));
+            width: calc((100vw - (100vw - 100%) / 2) + 18px);
+            padding-left: calc((100vw - 100%) / 2)!important;
             border-image-width: 50px 50px 50px 0;
         }
     }
 
-    @media(min-width: 992px){
-        .is-style-right-group {
-            width: calc((100vw - (100vw - 100%) / 2));
-        }
-
-        .is-style-left-group {
-            width: calc((100vw - (100vw - 100%) / 2));
-        }
-    }
-
-    @media(min-width: 1200px){
-        .is-style-right-group {
-            width: calc((100vw - (100vw - 100%) / 2));
-        }
-        .is-style-left-group {
-            width: calc((100vw - (100vw - 100%) / 2));
-        }
-    }
 
     .full-width-header, .full-width-block{
         margin-left: calc((100% - 100vw)/2);
