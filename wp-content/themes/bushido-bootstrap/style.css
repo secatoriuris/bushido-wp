@@ -81,7 +81,7 @@ Text Domain:	 bushido
 
     /*Blocks*/
 
-    .has-background{
+    .wp-block-group{
         width: 100vw;
         padding: 70px!important;
         margin-left: calc((100% - 100vw)/2);
@@ -96,38 +96,32 @@ Text Domain:	 bushido
 
     @media(min-width: 768px){
         .is-style-right-group {
-            width: calc((100vw - 80px - (100vw - 100%) / 2));
-            margin-left: 80px;
+            width: calc((100vw - (100vw - 100%) / 2));
             border-image-width: 50px 0 50px 50px;
         }
 
         .is-style-left-group {
-            width: calc((100vw - 80px - (100vw - 100%) / 2));
-            margin-left: calc(0 - ((100vw -100%) / 2));
+            width: calc((100vw - (100vw - 100%) / 2));
             border-image-width: 50px 50px 50px 0;
         }
     }
 
     @media(min-width: 992px){
         .is-style-right-group {
-            width: calc((100vw - 110px - (100vw - 100%) / 2));
-            margin-left: 110px;
+            width: calc((100vw - (100vw - 100%) / 2));
         }
 
         .is-style-left-group {
-            width: calc((100vw - 110px - (100vw - 100%) / 2));
-            margin-left: calc(0 - ((100vw -100%) / 2));
+            width: calc((100vw - (100vw - 100%) / 2));
         }
     }
 
     @media(min-width: 1200px){
         .is-style-right-group {
-            width: calc((100vw - 130px - (100vw - 100%) / 2));
-            margin-left: 130px;
+            width: calc((100vw - (100vw - 100%) / 2));
         }
         .is-style-left-group {
-            width: calc((100vw - 130px - (100vw - 100%) / 2));
-            margin-left: calc(0 - ((100vw -100%) / 2));
+            width: calc((100vw - (100vw - 100%) / 2));
         }
     }
 
