@@ -457,7 +457,7 @@ Text Domain:	 bushido
         padding-top: 175px;
     }
 
-    h1 {
+    h1.entry-title {
         font: 700 120px/120px "Odachi", sans-serif;
         letter-spacing: -0.06em;
         border-bottom: none;
