@@ -1,5 +1,6 @@
 <script>
 import { Axios, Slideshow, Settings } from '../api'
+import { AnalyticsNotice } from '../notices'
 import { EventManager } from '../utils'
 import QS from 'qs'
 import Swal from 'sweetalert2'
@@ -19,7 +20,11 @@ export default {
 		tourStatus: {
 			type: [String, Boolean],
 			default: false
-		}
+		},
+		showOptIn: {
+			type: [String, Boolean],
+			default: false
+		},
 	},
 	data() {
 		return {
@@ -87,17 +92,18 @@ export default {
 			this.$store.commit('slideshows/setLocked', false)
 		})
 
-		if (!this.tourStatus && this.id) {
-			EventManager.tourEnabled = true
+        // Listen to start the tour (only if there's an id and it hasnt been seen)
+		EventManager.$on('metaslider/start-tour', () => {
+			!this.tourStatus && this.id && this.startTour()
+		})
 
-			// Slight timeout to avoid any funky layouts like poopy.life
-			setTimeout(() => {
-				MainTour.start()
-			}, 750)
+		if (!this.showOptIn) {
+			EventManager.$emit('metaslider/start-tour')
+        }
 
-			// Set an event to handle cancelling the tour
-			MainTour.on('cancel', () => { this.cancelTour() })
-		}
+        if (this.showOptIn) {
+			EventManager.$emit('metaslider/open-utility-modal', AnalyticsNotice)
+        }
 
 		window.addEventListener('load', () => {
 			setTimeout(() => {
@@ -174,7 +180,18 @@ export default {
 			}).catch(error => {
 				this.notifyError('metaslider/duplicate-error', error, true)
 			})
-		},
+        },
+        startTour() {
+            EventManager.tourEnabled = true
+
+			// Slight timeout to avoid any funky layouts like poopy.life
+			setTimeout(() => {
+				MainTour.start()
+			}, 750)
+
+			// Set an event to handle cancelling the tour
+			MainTour.on('cancel', () => { this.cancelTour() })
+        },
 		saveSettings(data) {
 			let settings = data.filter(input => 'title' === input.name || input.name.startsWith('settings'))
 			return Settings.save(settings).then(() => {

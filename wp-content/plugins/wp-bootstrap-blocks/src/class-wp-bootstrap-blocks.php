@@ -33,7 +33,7 @@ class WP_Bootstrap_Blocks {
 	 *
 	 * @var string
 	 */
-	public $version = '2.4.2';
+	public static $version = '3.0.0';
 
 	/**
 	 * The plugin token.
@@ -79,6 +79,7 @@ class WP_Bootstrap_Blocks {
 		$this->includes();
 		$this->init_hooks();
 		$this->register_block_types();
+		Settings::init( $this->assets_dir, $this->assets_url );
 	}
 
 	/**
@@ -112,6 +113,7 @@ class WP_Bootstrap_Blocks {
 		require_once WP_BOOTSTRAP_BLOCKS_ABSPATH . 'src/row/class-row-block-type.php';
 		require_once WP_BOOTSTRAP_BLOCKS_ABSPATH . 'src/column/class-column-block-type.php';
 		require_once WP_BOOTSTRAP_BLOCKS_ABSPATH . 'src/button/class-button-block-type.php';
+		require_once WP_BOOTSTRAP_BLOCKS_ABSPATH . 'src/settings/class-settings.php';
 	}
 
 	/**
@@ -156,7 +158,7 @@ class WP_Bootstrap_Blocks {
 			$this->token . '-styles', // Handle.
 			esc_url( $this->assets_url ) . 'style-index.css', // Block style CSS.
 			array(),
-			$this->version
+			self::$version
 		);
 	}
 
@@ -171,25 +173,36 @@ class WP_Bootstrap_Blocks {
 		$index_asset = file_exists( $index_asset_file )
 			? require_once $index_asset_file
 			: null;
-		// Generated dependency array is only usable if WordPress dependencies are imported from NPM packages (eg. `import { __ } from '@wordpress/i18n'`)
-		// $index_dependencies = isset( $index_asset['dependencies'] ) ? $index_asset['dependencies'] : array();
+
+		$index_dependencies = isset( $index_asset['dependencies'] ) ? $index_asset['dependencies'] : array();
+		global $wp_version;
+		if ( version_compare( $wp_version, '5.2', '<' ) ) {
+			// We have to filter out the dependency to 'wp-block-editor' since it's not available in WordPress 5.1 and older.
+			$index_dependencies = array_filter(
+				$index_dependencies,
+				function ( $dependency ) {
+					return 'wp-block-editor' !== $dependency;
+				}
+			);
+		}
+
 		$index_version = isset( $index_asset['version'] ) ? $index_asset['version'] : filemtime( $index_path );
 
 		wp_enqueue_script(
 			$this->token . '-js', // Handle.
 			$index_url,
-			array(
-				'wp-element',
-				'wp-polyfill',
-				'wp-i18n',
-				'wp-blocks',
-				'wp-components',
-				'wp-hooks',
-				'wp-data',
-				'wp-compose',
-			),
+			$index_dependencies,
 			$index_version,
 			true // Enqueue the script in the footer.
+		);
+
+		wp_localize_script(
+			$this->token . '-js',
+			'wpBootstrapBlocks',
+			array(
+				'bootstrapVersion' => Settings::get_bootstrap_version(),
+				'isBootstrap5Active' => Settings::is_bootstrap_5_active(),
+			)
 		);
 
 		// Styles.
@@ -197,7 +210,7 @@ class WP_Bootstrap_Blocks {
 			$this->token . '-editor-styles', // Handle.
 			esc_url( $this->assets_url ) . 'index.css', // Block editor CSS.
 			array( 'wp-edit-blocks' ), // Dependency to include the CSS after it.
-			$this->version
+			self::$version
 		);
 	}
 
@@ -265,14 +278,14 @@ class WP_Bootstrap_Blocks {
 	 * Cloning is forbidden.
 	 */
 	public function __clone() {
-		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'wp-bootstrap-blocks' ), esc_attr( $this->version ) );
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'wp-bootstrap-blocks' ), esc_attr( self::$version ) );
 	}
 
 	/**
 	 * Unserializing instances of this class is forbidden.
 	 */
 	public function __wakeup() {
-		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'wp-bootstrap-blocks' ), esc_attr( $this->version ) );
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'wp-bootstrap-blocks' ), esc_attr( self::$version ) );
 	}
 
 	/**
@@ -292,7 +305,7 @@ class WP_Bootstrap_Blocks {
 			$old_version = get_option( $this->token . '_version' );
 			set_transient( $transient_name, $old_version, 5 * MINUTE_IN_SECONDS );
 		}
-		$new_version = $this->version;
+		$new_version = self::$version;
 		if ( $old_version !== $new_version ) {
 			$this->log_version_number();
 			delete_transient( $transient_name );
@@ -314,7 +327,7 @@ class WP_Bootstrap_Blocks {
 	 */
 	protected function log_version_number() {
 		delete_option( $this->token . '_version' );
-		update_option( $this->token . '_version', $this->version );
+		update_option( $this->token . '_version', self::$version );
 	}
 
 }

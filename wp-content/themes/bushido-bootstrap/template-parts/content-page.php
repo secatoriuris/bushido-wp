@@ -24,7 +24,7 @@
 						style="background: url(<?php echo $backgroundImg[0]?>);
 						background-position: center; 
 						background-size: cover;
-						background-color: #444;
+						background-color: #5b6f80;
 						background-blend-mode: screen;">
 						<div class="container header-title">
 							<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>

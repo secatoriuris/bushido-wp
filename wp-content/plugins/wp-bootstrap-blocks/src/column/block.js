@@ -2,11 +2,15 @@
  * BLOCK: wp-bootstrap-blocks/column
  */
 
+// WordPress dependencies
+import { registerBlockType } from '@wordpress/blocks';
+import { __ } from '@wordpress/i18n';
+import * as BlockEditor from '@wordpress/block-editor';
+import * as Editor from '@wordpress/editor';
+
 import edit, { bgColorOptions } from './edit';
 
-const { __ } = wp.i18n;
-const { registerBlockType } = wp.blocks;
-const { InnerBlocks } = wp.blockEditor || wp.editor; // Fallback to 'wp.editor' for backwards compatibility
+const { InnerBlocks } = BlockEditor || Editor; // Fallback to deprecated '@wordpress/editor' for backwards compatibility
 
 registerBlockType( 'wp-bootstrap-blocks/column', {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
@@ -24,11 +28,13 @@ registerBlockType( 'wp-bootstrap-blocks/column', {
 
 	getEditWrapperProps( attributes ) {
 		const {
+			sizeXxl,
 			sizeXl,
 			sizeLg,
 			sizeMd,
 			sizeSm,
 			sizeXs,
+			equalWidthXxl,
 			equalWidthXl,
 			equalWidthLg,
 			equalWidthMd,
@@ -54,6 +60,7 @@ registerBlockType( 'wp-bootstrap-blocks/column', {
 
 		return {
 			'data-size-xs':
+				equalWidthXxl ||
 				equalWidthXl ||
 				equalWidthLg ||
 				equalWidthMd ||
@@ -62,13 +69,21 @@ registerBlockType( 'wp-bootstrap-blocks/column', {
 					? 0
 					: sizeXs,
 			'data-size-sm':
-				equalWidthXl || equalWidthLg || equalWidthMd || equalWidthSm
+				equalWidthXxl ||
+				equalWidthXl ||
+				equalWidthLg ||
+				equalWidthMd ||
+				equalWidthSm
 					? 0
 					: sizeSm,
 			'data-size-md':
-				equalWidthXl || equalWidthLg || equalWidthMd ? 0 : sizeMd,
-			'data-size-lg': equalWidthXl || equalWidthLg ? 0 : sizeLg,
-			'data-size-xl': equalWidthXl ? 0 : sizeXl,
+				equalWidthXxl || equalWidthXl || equalWidthLg || equalWidthMd
+					? 0
+					: sizeMd,
+			'data-size-lg':
+				equalWidthXxl || equalWidthXl || equalWidthLg ? 0 : sizeLg,
+			'data-size-xl': equalWidthXxl || equalWidthXl ? 0 : sizeXl,
+			'data-size-xxl': equalWidthXxl ? 0 : sizeXxl,
 			'data-bg-color': bgColor,
 			'data-padding': padding,
 			'data-center-content': centerContent,

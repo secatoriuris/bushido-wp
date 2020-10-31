@@ -83,7 +83,6 @@ class MetaSlider_Admin_Pages extends MetaSliderPlugin
             'delete_slide_nonce' => wp_create_nonce('metaslider_delete_slide'),
             'undelete_slide_nonce' => wp_create_nonce('metaslider_undelete_slide'),
             'update_slide_image_nonce' => wp_create_nonce('metaslider_update_slide_image'),
-            'handle_notices_nonce' => wp_create_nonce('metaslider_handle_notices_nonce'),
             'useWithCaution' => __("Caution: This setting is for advanced developers only. If you're unsure, leave it checked.", "ml-slider")
         ));
         wp_enqueue_script('metaslider-admin-script');

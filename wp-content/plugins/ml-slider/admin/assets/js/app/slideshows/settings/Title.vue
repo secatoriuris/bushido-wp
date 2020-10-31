@@ -59,7 +59,7 @@ export default {
 	methods: {
 		save() {
 			if (this.currentSavedTitle.trim() === this.current.title.trim()) return
-			Settings.saveSingle('title', this.current.title.trim()).then(() => {
+			Settings.saveSingleSlideshowSetting('title', this.current.title.trim()).then(() => {
 				this.notifySuccess('metaslider/title-saved', this.__('Slideshow title updated'), true)
 				this.currentSavedTitle = this.current.title
 			})

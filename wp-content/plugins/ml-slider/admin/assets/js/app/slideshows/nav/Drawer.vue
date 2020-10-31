@@ -298,7 +298,7 @@ export default {
 		},
 		saveNavPosition: _.debounce(function() {
 			// Let users save the state of the nav position
-			Settings.saveGlobal('metaslider_nav_drawer_opened', this.opened)
+			Settings.saveUserSetting('metaslider_nav_drawer_opened', this.opened)
 
 		}, 3000),
 		sort() {
