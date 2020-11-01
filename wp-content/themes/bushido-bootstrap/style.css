@@ -534,7 +534,7 @@ h1.entry-title {
     text-align: center;
 }
 
-a.wp-block-button__link {
+.wp-block-button > a {
     border:solid;
     border-image-source: url(./images/button_frame.png);
     border-image-slice: 25%;
@@ -545,7 +545,18 @@ a.wp-block-button__link {
     text-transform: uppercase;
     font-weight: 800;
     padding: 30px!important;
+}
 
+.is-style-no-frame > a {
+    border: none;
+    color: var(--font-color)!important;
+    background: var(--primary-color);
+    border-radius: 0;
+    padding: 20px!important;
+}
+
+.is-style-no-frame > a:hover {
+    background: var(--primary-dark-color);
 }
 
 input.btn, 
@@ -635,7 +646,7 @@ h2.h2-footer {
 }
 
 .site-logo{
-    text-align: right;
+    text-align: center;
 }
 
 .site-logo > img{
@@ -643,7 +654,7 @@ h2.h2-footer {
 }
 
 .site-info {
-    text-align: right;
+    text-align: center;
     font-size: 21px;
     color: #fff;
 }
@@ -670,7 +681,7 @@ a.footer-sponsor-secondary {
 }
 
 .social-icon{
-    background-color: #000;
+    background-color: transparent;
     width: 80px;
     height: 80px;
     margin-right: 10px;
@@ -698,7 +709,7 @@ a.footer-sponsor-secondary {
     .site-logo{
         margin-top: 20px;
         margin-bottom: 20px;
-        text-align:center;
+        text-align: center;
     }
 
     .site-info{
@@ -925,8 +936,8 @@ article.mec-single-event > .col-md-8{
 }
 
 .mptt-event-container:hover{
-    width: calc(300% + 8px)!important;
-    left: calc(-100% - 4px)!important;
+    width: calc(100%)!important;
+    left: calc(0%)!important;
     border: none!important;
     outline: 4px solid #000!important;
     padding-bottom: 5px;
