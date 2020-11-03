@@ -633,7 +633,7 @@ figure.teaser-image > img {
 
 @media(max-width: 991px){
     figure.teaser-image > img {
-        height: 100px;
+        height: 150px;
     }
 }
 
@@ -655,6 +655,24 @@ figure.teaser-image > img {
     width: 100%;
     top: 15px;
     left: 0;
+}
+
+@media(max-width:991px){
+    .teaser-button{
+        top: 30px;
+    }
+    .wp-block-button > a{
+        padding: 15px!important;
+    }
+}
+
+@media(max-width:767px){
+    .teaser-button{
+        top: 40px;
+    }
+    .wp-block-button > a{
+        padding: 30px!important;
+    }
 }
 
 .wp-block-group__inner-container > .row:first-child > div:first-child > figure.teaser-image{
