@@ -44,6 +44,11 @@
 							<?php echo '<img src="'.home_url().'/wp-content/themes/bushido-bootstrap/logos/facebook.svg">'?>
 						</a>
 					</div>
+					<div class="social-icon">
+						<a href="https://instagram.com/sportschule_bushido?igshid=hfszjde8w1uf" target="_blank">
+							<?php echo '<img src="'.home_url().'/wp-content/themes/bushido-bootstrap/logos/instagram.svg">'?>
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
