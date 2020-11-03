@@ -646,8 +646,15 @@ figure.teaser-image > img {
 
 .teaser-image{
     margin:0!important;
-    padding-top: 70px;
     padding-bottom: 30px;
+}
+
+.teaser-button{
+    padding-top: 10px;
+    position: absolute;
+    width: 100%;
+    top: 15px;
+    left: 0;
 }
 
 .wp-block-group__inner-container > .row:first-child > div:first-child > figure.teaser-image{
