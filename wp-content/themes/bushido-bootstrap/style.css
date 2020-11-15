@@ -538,26 +538,25 @@ h1.entry-title {
     padding-top: 10px;
 }
 
-.wp-block-button > a {
-    border:solid;
-    border-image-source: url(./images/button_frame.png);
-    border-image-slice: 35%;
-    border-image-width: 50px;
+.wp-block-button > a, input.btn {
+    border:solid!important;
+    border-image-source: url(./images/button_frame.png)!important;
+    border-image-slice: 35%!important;
+    border-image-width: 50px!important;
 
     color: var(--font-color)!important;
-    background: transparent;
-    text-transform: uppercase;
-    font-weight: 800;
-    padding: 30px!important;
+    background: transparent!important;
+    font-weight: 800!important;
+    padding: 30px;
 
-    font-family: "Odachi", sans-serif;
-    font-size: 28pt;
-    text-transform: unset;
+    font-family: "Odachi", sans-serif!important;
+    font-size: 28pt!important;
+    text-transform: unset!important;
 }
 
 @media(max-width: 991px){
-    .wp-block-button > a {
-        font-size: 20pt;
+    .wp-block-button > a, input.btn {
+        font-size: 20pt!important;
     }
 }
 
@@ -585,7 +584,7 @@ a.wp-block-file__button{
     color: #fff;
     cursor: pointer;
     display: inline-block;
-    font-size: 18px!important;
+    font-size: 18px;
     margin: 0;
     padding: 12px 24px;
     text-align: center;
