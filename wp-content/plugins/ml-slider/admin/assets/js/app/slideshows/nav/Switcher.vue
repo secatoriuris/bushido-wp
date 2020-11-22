@@ -10,7 +10,7 @@
 			type="text"
 			ref="switcher"
 			id="ms-slideshow-switcher"
-			class="h-full w-full border border-gray-light focus:bg-white focus:shadow bg-gray-lightest transition-all duration-300 ease-in shadow-none focus:outline-none border-transparent placeholder-gray-darker rounded m-0 px-8 block appearance-none leading-normal ds-input"
+			class="h-full w-full border border-gray-light focus:bg-white focus:shadow bg-gray-lightest transition duration-300 ease-in shadow-none focus:outline-none border-transparent placeholder-gray-darker rounded m-0 px-8 block appearance-none leading-normal ds-input"
 			/>
 			<span
 				@mouseover="maybeAboutToClick = true"

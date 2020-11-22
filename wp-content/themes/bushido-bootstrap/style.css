@@ -554,6 +554,17 @@ h1.entry-title {
     text-transform: unset!important;
 }
 
+.pum-container{
+    border:solid!important;
+    border-image-source: url(./images/popup_frame.png)!important;
+    border-image-slice: 15%!important;
+    border-image-width: 40px!important;
+    border-image-outset: 15px!important;
+    padding: 50px!important;
+
+
+}
+
 @media(max-width: 991px){
     .wp-block-button > a, input.btn {
         font-size: 20pt!important;

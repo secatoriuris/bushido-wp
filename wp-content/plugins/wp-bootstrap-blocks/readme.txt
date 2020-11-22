@@ -5,7 +5,7 @@ Tags: gutenberg, blocks, bootstrap
 Requires at least: 5.0
 Tested up to: 5.5
 Requires PHP: 5.6
-Stable tag: 3.0.0
+Stable tag: 3.1.1
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,7 +22,7 @@ The full documentation of this plugin can be found on GitHub: [https://github.co
 Options:
 
 * Fluid: If enabled the container will use the full available width, spanning the entire width of the viewport.
-* Fluid Breakpoint: Used to enable [responsive containers](https://getbootstrap.com/docs/4.4/layout/overview/#responsive). This feature only work with Bootstrap v4.4+. The container will use 100% of the width until the specified breakpoint is reached, after which the defined max-widths will apply for each of the higher breakpoints.
+* Fluid Breakpoint: Used to enable [responsive containers](https://getbootstrap.com/docs/4.4/layout/overview/#responsive). This feature only works with Bootstrap v4.4+. The container will use 100% of the width until the specified breakpoint is reached, after which the defined max-widths will apply for each of the higher breakpoints.
 * Margin After: Define a margin which should be added after the container.
 
 **Row**
@@ -52,6 +52,8 @@ Options:
 Options:
 
 * Style: Choose the styling of the button.
+* Open in new tab: Choose if link should be opened in a new tab.
+* Rel: Set rel attribute of the link.
 * Alignment: Horizontal alignment of the button.
 
 = Supported Bootstrap versions =
@@ -118,6 +120,17 @@ Please create a new GitHub issue and let us know: [https://github.com/liip/boots
 1. Container block
 
 == Changelog ==
+
+= 3.1.1 =
+
+* [FIX] Use unique `jsonpFunction` name in webpack config to avoid conflict with other plugins built with `@wordpress/scripts`. (Thanks CP-Antoine for the hint)
+* [IMPROVEMENT] Replace WordPress Dashicons with SVG icons.
+
+= 3.1.0 =
+
+* [FEATURE] Add possibility to open link of `button` block in new tab.
+* [FEATURE] Add possibility to set the `rel` attribute of the `button` blocks link.
+* Modified Templates: `button.php`
 
 = 3.0.0 =
 

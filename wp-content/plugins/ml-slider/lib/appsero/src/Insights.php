@@ -776,7 +776,7 @@ class Insights
 
         $this->deactivation_modal_styles();
         $reasons = $this->get_uninstall_reasons();
-        $custom_reasons = apply_filters('appsero_custom_deactivation_reasons', []); ?>
+        $custom_reasons = apply_filters('appsero_custom_deactivation_reasons', array()); ?>
 
         <div class="wd-dr-modal" id="<?php echo $this->client->slug; ?>-wd-dr-modal">
             <div class="wd-dr-modal-wrap">
@@ -974,10 +974,10 @@ class Insights
     {
         $skipped = get_option($this->client->slug . '_tracking_skipped');
 
-        $data = [
+        $data = array(
             'hash'               => $this->client->hash,
             'previously_skipped' => false,
-        ];
+        );
 
         if ($skipped === 'yes') {
             $data['previously_skipped'] = true;

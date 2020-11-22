@@ -18,7 +18,7 @@ class MetaSlider_Analytics
     /**
      * @var array $whereToShow
      */
-    public $whereToShow = ['plugins', 'dashboard'];
+    public $whereToShow = array('plugins', 'dashboard');
 
     /**
      * Start various analytics systems
@@ -51,7 +51,7 @@ class MetaSlider_Analytics
         wp_register_script('metaslider-optin-extra-js', '');
         wp_enqueue_script('metaslider-optin-extra-js');
         $nonce = wp_create_nonce('metaslider_optin_notice_nonce');
-        wp_add_inline_script(
+        $this->wp_add_inline_script(
             'metaslider-optin-extra-js',
             "window.metaslider_optin_notice_nonce = '{$nonce}'"
         );
@@ -142,6 +142,7 @@ class MetaSlider_Analytics
         if (!class_exists('MSAppsero/Client')) {
             require_once(METASLIDER_PATH . 'lib/appsero/src/Client.php');
         }
+        add_filter('ml-slider_tracker_data', array($this, 'filterTrackingData'));
         $client = new MSAppsero\Client($key, $name, $path);
         $this->appsero = $client->insights();
         return $this;
@@ -158,11 +159,10 @@ class MetaSlider_Analytics
             return;
         }
 
-        $extra = $this->extraDataToCollect();
         if (self::siteIsOptin()) {
             // If the user has opted in to sharing data with MetaSlider, we can skip the Appsero opt in
             // $this->appsero->hide_notice()->init()->optinIfNotAlready(); <-- would be nice
-            $this->appsero->hide_notice()->add_extra($extra)->init();
+            $this->appsero->hide_notice()->add_extra(array($this, 'extraDataToCollect'))->init();
             if (get_option('ml-slider_allow_tracking') === 'no') {
                 $this->appsero->optin();
             }
@@ -170,7 +170,7 @@ class MetaSlider_Analytics
             // Here we are hiding the notice for users that aren't opted in, because we are serving our own notices
             // We will make sure they are opted out from appsero too. Note, this initializes, but that's just for
             // showing the notice and doesn't do any actual tracking unless the user approves.
-            $this->appsero->hide_notice()->add_extra($extra)->init();
+            $this->appsero->hide_notice()->add_extra(array($this, 'extraDataToCollect'))->init();
             if (get_option('ml-slider_allow_tracking') === 'yes') {
                 $this->appsero->optout();
             }
@@ -178,15 +178,33 @@ class MetaSlider_Analytics
     }
 
     /**
-     * Add some extra fields
+     * Filter Appsero's data
+     * - We want the user that opts in, not the first admin user
+     *
+     * @var array $data - The data from Appsero
+     *
+     * @return array
+     */
+    public function filterTrackingData($data)
+    {
+        if (!$extras = get_option('metaslider_optin_user_extras')) {
+            return $data;
+        }
+        if ($admin_user = get_userdata($extras['id'])) {
+            $data['admin_email'] = $admin_user->user_email;
+            $data['first_name'] = $admin_user->first_name ? $admin_user->first_name : $admin_user->display_name;
+            $data['last_name']  = $admin_user->last_name;
+        }
+        return $data;
+    }
+
+    /**
+     * Add some extra fields - This is called async now so no need to cache it.
      *
      * @return void
      */
-    private function extraDataToCollect()
+    public function extraDataToCollect()
     {
-        if ($cache = get_transient('metaslider_extra_analytics_data')) {
-            return $cache;
-        }
         try {
             $sliders_count = new WP_Query(array(
                 'post_type' => 'ml-slider',
@@ -194,15 +212,19 @@ class MetaSlider_Analytics
                 'suppress_filters' => 1,
                 'posts_per_page' => -1
             ));
+
+            $date_activated = new DateTime();
+            $date_activated->setTimestamp((int) get_option('ms_hide_all_ads_until'));
+            $date_activated->modify('-2 week');
+            $date_activated = $date_activated->getTimeStamp();
             $data = array(
                 'has_pro_installed' => metaslider_pro_is_installed() ? metaslider_pro_version() : 'false',
                 'cancelled_tour_on' => get_option('metaslider_tour_cancelled_on'),
                 'optin_user_info' => get_option('metaslider_optin_user_extras'),
                 'optin_via' => get_option('metaslider_optin_via'),
-                'slider_count' => $sliders_count ? $sliders_count->found_posts : 0
+                'slider_count' => $sliders_count ? $sliders_count->found_posts : 0,
+                'first_activated_on' => $date_activated > 0 ? $date_activated : 0
             );
-            // Cache one day
-            set_transient('metaslider_extra_analytics_data', $data, 86400);
             return $data;
         } catch (\Throwable $th) {
             return array();
@@ -253,7 +275,6 @@ class MetaSlider_Analytics
      */
     public function optin()
     {
-        delete_transient('metaslider_extra_analytics_data');
         $current_user = wp_get_current_user();
         update_option('metaslider_optin_user_extras', array(
             'id' => $current_user->ID,
@@ -263,8 +284,7 @@ class MetaSlider_Analytics
         ));
 
         if ($this->appsero) {
-            $extra = $this->extraDataToCollect();
-            $this->appsero->hide_notice()->add_extra($extra)->init();
+            $this->appsero->hide_notice()->add_extra(array($this, 'extraDataToCollect'))->init();
             $this->appsero->optin();
         }
 
@@ -288,5 +308,33 @@ class MetaSlider_Analytics
         }
 
         self::updateOptinStatusTo('false');
+    }
+
+    /**
+     * Polyfill to handle the wp_add_inline_script() function.
+     *
+     * @param  string $handle   The script identifier
+     * @param  string $data     The script to add, without <script> tags
+     * @param  string $position Whether to output before or after
+     *
+     * @return object|bool
+     */
+    public function wp_add_inline_script($handle, $data, $position = 'after')
+    {
+        if (function_exists('wp_add_inline_script')) {
+            return wp_add_inline_script($handle, $data, $position);
+        }
+        global $wp_scripts;
+        if (!$data) {
+            return false;
+        }
+
+        // First fetch any existing scripts
+        $script = $wp_scripts->get_data($handle, 'data');
+
+        // Append to the end
+        $script .= $data;
+
+        return $wp_scripts->add_data($handle, 'data', $script);
     }
 }

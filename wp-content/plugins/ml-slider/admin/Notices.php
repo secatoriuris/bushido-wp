@@ -70,7 +70,7 @@ class MetaSlider_Notices extends Updraft_Notices_1_0
         wp_register_script('metaslider-notices-extra-js', '');
         wp_enqueue_script('metaslider-notices-extra-js');
         $nonce = wp_create_nonce('metaslider_handle_notices_nonce');
-        wp_add_inline_script(
+        $this->wp_add_inline_script(
             'metaslider-notices-extra-js',
             "window.metaslider_notices_handle_notices_nonce = '{$nonce}'"
         );
@@ -627,5 +627,33 @@ class MetaSlider_Notices extends Updraft_Notices_1_0
             (defined('METASLIDER_FORCE_PRO_NOTICES') && METASLIDER_FORCE_PRO_NOTICES) ||
             (defined('METASLIDER_FORCE_LITE_NOTICES') && METASLIDER_FORCE_LITE_NOTICES) ||
             (defined('METASLIDER_DISABLE_SEASONAL_NOTICES') && METASLIDER_DISABLE_SEASONAL_NOTICES);
+    }
+
+    /**
+     * Polyfill to handle the wp_add_inline_script() function.
+     *
+     * @param  string $handle   The script identifier
+     * @param  string $data     The script to add, without <script> tags
+     * @param  string $position Whether to output before or after
+     *
+     * @return object|bool
+     */
+    public function wp_add_inline_script($handle, $data, $position = 'after')
+    {
+        if (function_exists('wp_add_inline_script')) {
+            return wp_add_inline_script($handle, $data, $position);
+        }
+        global $wp_scripts;
+        if (!$data) {
+            return false;
+        }
+
+        // First fetch any existing scripts
+        $script = $wp_scripts->get_data($handle, 'data');
+
+        // Append to the end
+        $script .= $data;
+
+        return $wp_scripts->add_data($handle, 'data', $script);
     }
 }
