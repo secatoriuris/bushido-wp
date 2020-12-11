@@ -1030,6 +1030,10 @@ p.timeslot, p.event-description{
     font:400 .9em/1.5em "Lato", sans-serif!important;
 }
 
+.mptt-shortcode-wrapper .mptt-shortcode-table tr.mptt-shortcode-row th{
+    max-width: 5vw;
+}
+
 
 td.event{
     background-color: unset!important;
