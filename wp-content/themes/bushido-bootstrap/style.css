@@ -1004,25 +1004,30 @@ article.mec-single-event > .col-md-8{
 
 /*Timetable*/
 .mptt-event-container {
-    width: 50%!important;
+    width: 100%!important;
     height: 100%!important;
-    border-right: 4px solid #000;
-    outline: none!important;
+/*    border-right: 4px solid #000;
+*/    outline: none!important;
 }
 
-.mptt-event-container:nth-child(2) {
+/*.mptt-event-container:nth-child(2) {
     left: 50%!important;
     top: 0!important;
     border-right: none;
-}
+}*/
 
 .mptt-event-container:hover{
-    width: calc(100%)!important;
-    left: calc(0%)!important;
+    width: calc(260%)!important;
+    left: calc(-80%)!important;
+    top: calc(-88%)!important;
     border: none!important;
     outline: 4px solid #000!important;
     padding-bottom: 5px;
-    min-height: calc(300% + 8px)!important;
+    min-height: calc(260% + 8px)!important;
+}
+
+p.timeslot, p.event-description{
+    font:400 .9em/1.5em "Lato", sans-serif!important;
 }
 
 
