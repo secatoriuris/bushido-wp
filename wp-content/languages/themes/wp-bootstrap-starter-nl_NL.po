@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - WP Bootstrap Starter package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-06-16 10:10:41+0000\n"
+"PO-Revision-Date: 2021-01-28 09:38:40+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,34 +12,46 @@ msgstr ""
 "Project-Id-Version: Themes - WP Bootstrap Starter\n"
 
 #. Description of the theme
-msgid "The best WordPress starter theme based on the most powerful frameworks in the world: \"_s\" (by Automattic, the main people behind WordPress development), Twitter Bootstrap (the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web) and Font Awesome (or Fontawesome, a full suite of 675+ pictographic icons for easy scalable vector graphics on websites). This theme, like WordPress, is licensed under the GPL. You can use this theme as base for your next WordPress theme project and you are allowed to remove the link at the footer or do whatever you want. Your feedback on how we can continuously improve this WordPress Starter Theme Bootstrap will be highly appreciated. Page templates includes Right-sidebar (default page template), Left-Sidebar, Full-Width, Blank with container, Blank without container Page. Other features - Currently using Bootstrap v4.0.0 , Widgetized footer area, WooCommerce ready, Compatible with Contact Form 7, Compatible with Visual Composer, Compatible with Elementor Page Builder. This theme will be an active project which we will update from time to time. Check this page regularly for the updates."
-msgstr "Het beste WordPress starters thema op basis van de krachtigste frameworks ter wereld: \"_s\" (door Automattic, de belangrijkste mensen achter de ontwikkeling van WordPress), Twitter Bootstrap (het populairste HTML-, CSS- en JS-framework voor het ontwikkelen van responsieve, mobiele eerste projecten op het web) en Font Awesome (of Fontawesome, een volledige reeks van 675+ pictografische pictogrammen voor eenvoudig schaalbare vectorafbeeldingen op websites). Dit thema, zoals WordPress, is gelicenseerd onder de GPL. Je kunt dit thema gebruiken als basis voor je volgende WordPress thema project en je kunt de link onderaan verwijderen of doen wat je maar wilt. Je feedback over hoe we deze WordPress Starter Theme Bootstrap continue kunnen verbeteren, wordt zeer op prijs gesteld. Pagina templates bevatten een rechterzijbalk (standaardpaginasjabloon), linker zijbalk, volledige breedte, leeg met container, leeg zonder container pagina. Overige functies - Momenteel gebruik van Bootstrap v4.0.0, Widgetized footergebied, klaar voor WooCommerce, Compatibel met Contact Form 7, Compatibel met Visual Composer, Compatibel met Elementor Page Builder. Dit thema zal een actief project zijn dat we van tijd tot tijd zullen bijwerken. Kijk regelmatig op deze pagina voor de updates."
+msgid "The best WordPress starter theme based on the most powerful frameworks in the world: \"_s\" (by Automattic, the main people behind WordPress development), Twitter Bootstrap (the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web) and Font Awesome (or Fontawesome, a full suite of 675+ pictographic icons for easy scalable vector graphics on websites). This theme, like WordPress, is licensed under the GPL. You can use this theme as base for your next WordPress theme project and you are allowed to remove the link at the footer or do whatever you want. Your feedback on how we can continuously improve this WordPress Starter Theme Bootstrap will be highly appreciated. Page templates includes Right-sidebar (default page template), Left-Sidebar, Full-Width, Blank with container, Blank without container Page. Other features - Currently using Bootstrap v4.5.3 , Widgetized footer area, WooCommerce ready, Compatible with Contact Form 7, Compatible with Visual Composer, Compatible with Elementor Page Builder. This theme will be an active project which we will update from time to time. Check this page regularly for the updates."
+msgstr "Het beste WordPress starters thema op basis van de krachtigste frameworks ter wereld: \"_s\" (door Automattic, de belangrijkste mensen achter de ontwikkeling van WordPress), Twitter Bootstrap (het populairste HTML-, CSS- en JS-framework voor het ontwikkelen van responsieve, mobile first projecten op het web) en Font Awesome (of Fontawesome, een volledige suite van 675+ pictografische pictogrammen voor eenvoudig schaalbare vectorafbeeldingen op sites). Dit thema, zoals WordPress, is gelicenseerd onder de GPL. Je kunt dit thema gebruiken als basis voor je volgende WordPress thema project en je kunt de link onderaan verwijderen of doen wat je maar wilt. Je feedback over hoe we deze WordPress Starter Theme Bootstrap continue kunnen verbeteren, wordt zeer op prijs gesteld. Pagina templates bevatten een rechterzijbalk (standaard pagina template), linker zijbalk, volledige breedte, leeg met container, leeg zonder container pagina. Overige functies - Momenteel gebruik van Bootstrap v4.5.3, Widgetized footergebied, klaar voor WooCommerce, Compatibel met Contact Form 7, Compatibel met Visual Composer, Compatibel met Elementor Page Builder. Dit thema zal een actief project zijn dat we van tijd tot tijd zullen bijwerken. Kijk regelmatig op deze pagina voor de updates."
 
 #. Theme Name of the theme
 msgid "WP Bootstrap Starter"
 msgstr "WP Bootstrap Starter"
 
+#: comments.php:100
+msgid "Comment"
+msgstr "Reactie"
+
+#: inc/customizer.php:304
+msgid "All Bootstrap Assets will be loaded in CDN."
+msgstr "Alle bootstrap assets zullen geladen worden in CDN."
+
+#: inc/customizer.php:325
+msgid "Override the current footer credit."
+msgstr "Overschrijf de huidige footer credit."
+
+#: inc/customizer.php:324
+msgid "Edit Footer Credits"
+msgstr "Bewerk footer credits"
+
 #: woocommerce/cart/cart.php:33
 msgid "Subtotal"
 msgstr "Subtotaal"
 
-#: inc/customizer.php:200
-msgid "All Bootstrap Assets and FontAwesome will be loaded in CDN."
-msgstr "Alle bootstrap assets en FontAwsome zullen worden geladen in CDN."
-
-#: inc/customizer.php:199
+#: inc/customizer.php:303
 msgid "Use CDN for Assets"
 msgstr "Gebruik CDN voor assets"
 
-#: inc/customizer.php:206
+#: inc/customizer.php:310
 msgid "No"
 msgstr "Nee"
 
-#: inc/customizer.php:205
+#: inc/customizer.php:309
 msgid "Yes"
 msgstr "Ja"
 
-#: inc/customizer.php:193
+#: inc/customizer.php:297
 msgid "no"
 msgstr "nee"
 
@@ -56,11 +68,11 @@ msgstr "Menu toevoegen"
 msgid "Shop order"
 msgstr "Volgorde winkel "
 
-#: functions.php:86
+#: functions.php:97
 msgid "Welcome to WP Bootstrap Starter Theme! Before diving in to your new theme, please visit the <a style=\"color: #fff; font-weight: bold;\" href=\"%1$s\" target=\"_blank\">theme's</a> page for access to dozens of tips and in-depth tutorials."
 msgstr "Welkom bij WP Bootstrap Starter Theme! Voordat je aan de slag gaat met het nieuwe thema, bezoek de <a style=\"color: #fff; font-weight: bold;\" href=\"%1$s\" target=\"_blank\">theme</a> pagina voor tips en handleidingen."
 
-#: inc/customizer.php:38
+#: inc/customizer.php:135
 msgid "Theme Option"
 msgstr "Thema Optie"
 
@@ -68,59 +80,59 @@ msgstr "Thema Optie"
 msgid "To customize the contents of this header banner and other elements of your site, go to Dashboard > Appearance > Customize"
 msgstr "Om de inhoud van deze header banner en andere elementen van je site aan te passen, ga je naar Dashboard - Weergave - Customizer"
 
-#: footer.php:23
+#: footer.php:42
 msgid "Bootstrap WordPress Theme"
 msgstr "Bootstrap WordPress Thema"
 
-#: inc/customizer.php:184
+#: inc/customizer.php:288
 msgid "Background Image"
 msgstr "Achtergrondafbeelding"
 
-#: inc/customizer.php:175
+#: inc/customizer.php:279
 msgid "Background Color"
 msgstr "Achtergrondkleur"
 
-#: inc/customizer.php:167
+#: inc/customizer.php:271
 msgid "Other Customizations"
 msgstr "Andere instellingen"
 
-#: inc/customizer.php:157
+#: inc/customizer.php:260
 msgid "Remove Header Banner"
 msgstr "Verwijder Header Banner"
 
-#: inc/customizer.php:124
+#: inc/customizer.php:224
 msgid "Header Banner Background Color"
 msgstr "Header banner achtergrondkleur"
 
-#: inc/customizer.php:97
+#: inc/customizer.php:196
 msgid "Header Banner"
 msgstr "Header banner"
 
-#: inc/customizer.php:24
+#: inc/customizer.php:121
 msgid "Preset Styles"
 msgstr "Voorkeur stijlen"
 
-#: inc/customizer.php:75
+#: inc/customizer.php:173
 msgid "Typography"
 msgstr "Typografie"
 
-#: inc/customizer.php:142
+#: inc/customizer.php:244
 msgid "To customize the contents of this header banner and other elements of your site go to Dashboard - Appearance - Customize"
 msgstr "Om de inhoud van de header banner en andere elementen van je site aan te passen ga naar Dashboard - Weergave - Aanpassen"
 
-#: inc/customizer.php:106
+#: inc/customizer.php:205
 msgid "Header Image"
 msgstr "Header afbeelding"
 
-#: inc/customizer.php:146
+#: inc/customizer.php:248
 msgid "Banner Tagline"
 msgstr "Banner tagline"
 
-#: inc/customizer.php:135
+#: inc/customizer.php:236
 msgid "Banner Title"
 msgstr "Banner titel"
 
-#: inc/customizer.php:131
+#: inc/customizer.php:232
 msgid "WP Bootstrap Framework"
 msgstr "WP Bootstrap Framework"
 
@@ -201,15 +213,15 @@ msgstr "Bewerk"
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: functions.php:264
+#: functions.php:277
 msgid "Submit"
 msgstr "Verstuur"
 
-#: functions.php:264
+#: functions.php:277
 msgid "Password:"
 msgstr "Wachtwoord:"
 
-#: functions.php:263
+#: functions.php:276
 msgid "To view this protected post, enter the password below:"
 msgstr "Voer het onderstaande wachtwoord in om dit beveiligde bericht te bekijken:"
 
@@ -238,19 +250,19 @@ msgstr "Laat een antwoord achter"
 msgid "Left Sidebar"
 msgstr "Linker zijbalk"
 
-#: inc/customizer.php:225
+#: inc/customizer.php:347
 msgid "Upload Logo (replaces text)"
 msgstr "Upload Logo (vervangt tekst)"
 
-#: functions.php:148
+#: functions.php:159
 msgid "Footer 3"
 msgstr "Footer 3"
 
-#: functions.php:139
+#: functions.php:150
 msgid "Footer 2"
 msgstr "Footer 2"
 
-#: functions.php:130
+#: functions.php:141
 msgid "Footer 1"
 msgstr "Footer 1"
 
@@ -335,11 +347,11 @@ msgstr "Geplaatst op %s"
 msgid "Skip to content"
 msgstr "Meteen naar de inhoud"
 
-#: functions.php:123 functions.php:132 functions.php:141 functions.php:150
+#: functions.php:134 functions.php:143 functions.php:152 functions.php:161
 msgid "Add widgets here."
 msgstr "Widgets hier toevoegen."
 
-#: functions.php:121
+#: functions.php:132
 msgid "Sidebar"
 msgstr "Zijbalk"
 

@@ -1,0 +1,76 @@
+# Translation of Plugins - Bootstrap Blocks - Stable (latest release) in German
+# This file is distributed under the same license as the Plugins - Bootstrap Blocks - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2020-12-14 11:12:54+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"Language: de\n"
+"Project-Id-Version: Plugins - Bootstrap Blocks - Stable (latest release)\n"
+
+#. translators: %s contains constant name
+#: src/settings/class-settings.php:324
+msgctxt "%s contains constant name"
+msgid "Option is defined in the following constant: %s"
+msgstr "Die Option ist in der folgenden Konstante definiert: %s"
+
+#: src/settings/class-settings.php:257
+msgid "Field data missing."
+msgstr "Felddaten fehlen."
+
+#: src/settings/class-settings.php:230
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Du hast keine ausreichenden Berechtigungen, um auf diese Seite zuzugreifen."
+
+#: src/settings/class-settings.php:182
+msgid "Main settings"
+msgstr "Haupteinstellungen"
+
+#: src/settings/class-settings.php:167
+msgid "Depending on the selected Bootstrap version the blocks will be rendered accordingly and version specific features will be available in the editor."
+msgstr "Abhängig von der gewählten Bootstrap-Version werden die Blöcke entsprechend gerendert und es stehen versionsspezifische Funktionen im Editor zur Verfügung."
+
+#: src/settings/class-settings.php:166
+msgid "Bootstrap Version (experimental)"
+msgstr "Bootstrap-Version (experimentell)"
+
+#: src/settings/class-settings.php:150
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: src/settings/class-settings.php:139 src/settings/class-settings.php:234
+msgid "Bootstrap Blocks Settings"
+msgstr "Bootstrap-Blocks-Einstellungen"
+
+#. Author of the plugin
+msgid "Liip AG"
+msgstr "Liip AG"
+
+#. translators: %s template
+#: src/wp-bootstrap-blocks-functions.php:26
+msgid "%s does not exist."
+msgstr "%s existiert nicht."
+
+#: src/class-wp-bootstrap-blocks.php:281 src/class-wp-bootstrap-blocks.php:288
+msgid "Cheatin&#8217; huh?"
+msgstr "Du schummelst, hm?"
+
+#. Author URI of the plugin
+msgid "https://liip.ch"
+msgstr "https://liip.ch"
+
+#. Description of the plugin
+msgid "Bootstrap Gutenberg Blocks for WordPress."
+msgstr "Bootstrap-Gutenberg-Blöcke für WordPress."
+
+#. Plugin URI of the plugin
+msgid "https://github.com/liip/bootstrap-blocks-wordpress-plugin"
+msgstr "https://github.com/liip/bootstrap-blocks-wordpress-plugin"
+
+#. Plugin Name of the plugin
+#: src/settings/class-settings.php:139 src/class-wp-bootstrap-blocks.php:231
+msgid "Bootstrap Blocks"
+msgstr "Bootstrap Blocks"

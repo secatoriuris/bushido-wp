@@ -1,13 +1,13 @@
 === WordPress Gallery Plugin - NextGEN Gallery ===
 Contributors: photocrati, imagely
 Tags: wordpress gallery plugin, gallery, nextgen, nextgen gallery, photo gallery, image gallery, photography, slideshow, images, photo, photo album, watermark
-Requires at least: 5.2.0
-Stable tag: 3.3.20
-Tested up to: 5.5.1
+Requires at least: 5.4.0
+Stable tag: 3.6.0
+Tested up to: 5.6.1
 License: GPLv3
 Requires PHP: 5.6
 
-The most popular WordPress gallery plugin and one of the most popular plugins of all time with over 30 million downloads.
+The most popular WordPress gallery plugin and one of the most popular plugins of all time with over 31 million downloads.
 
 == Description ==
 
@@ -179,6 +179,33 @@ For more information, feel free to visit the official website for the NextGEN Ga
 
 
 == Changelog ==
+
+= V3.6.0 - 02.10.2020 =
+* NEW:     Added new 'Bulk actions' option to remove EXIF Orientation from existing images (1137)
+* NEW:     Allow maximum_entity_limit display setting regardless of source (1146)
+* NEW:     Provide hooks to customize Uppy settings (1139)
+* NEW:     Recreated legacy templates as modern "views" (1127)
+* Fixed:   A compatibility warning with NextGEN Plus would appear when users had NextGEN Starter (1097)
+* Fixed:   Compatibility issue with Topscorer Theme (344171)
+* Fixed:   Compatibility with Custom Post Types UI (1076)
+* Fixed:   Compatibility with jQuery.mmenu (1140)
+* Fixed:   Disable marketing additions for users with NextGEN Starter enabled
+* Fixed:   Error responses from the server when uploading images failed were not specific (1121)
+* Fixed:   Image rotation not reliable (1137)
+* Fixed:   Imagebrowser pagination broke on images with UTF8 characters in their title (1135)
+* Fixed:   Shortcodes displaying albums did not appear in the order listed (1128)
+* Fixed:   Transient tracker was calling update_option() on every page (1074)
+
+= v3.5.0 - 12.17.2020 =
+* Changed: Deprecated legacy template functionality
+* Changed: Deprecated built-in custom style / CSS mechanism
+* Fixed:   Misc updates for PHP 8.0 compatibility
+
+= v3.4.7 - 11.25.2020 =
+* NEW:     Replaced plupload with a new uppy.js based uploader for faster uploading
+* Changed: Updated select2 and Gritter to the latest versions
+* Changed: Several changes have been made for future jQuery 3.5 compatibility
+* Fixed:   Gutenberg Block and Featured Image features on wordpress.com hosting
 
 = V3.3.20 - 10.13.2020 =
 * NEW:     PHP 5.6 is the minimum supported PHP version

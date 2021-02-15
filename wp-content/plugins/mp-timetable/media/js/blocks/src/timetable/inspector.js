@@ -1,6 +1,6 @@
 import { get } from "lodash";
+import { __ } from 'wp.i18n';
 
-const {__} = wp.i18n;
 const {Component} = wp.element;
 
 const {
@@ -84,6 +84,7 @@ class Inspector extends Component {
 					title={__('Settings', 'mp-timetable')}
 				>
 					<SelectControl
+						className="timetable-wp56-fix"
 						multiple
 						size="7"
 						label={__('Columns', 'mp-timetable')}
@@ -93,6 +94,7 @@ class Inspector extends Component {
 						options={this.setOptions(selectedColumns)}
 					/>
 					<SelectControl
+						className="timetable-wp56-fix"
 						multiple
 						size="7"
 						label={__('Specific events', 'mp-timetable')}
@@ -102,6 +104,7 @@ class Inspector extends Component {
 						options={this.setOptions(selectedEvents )}
 					/>
 					<SelectControl
+						className="timetable-wp56-fix"
 						multiple
 						size="7"
 						label={__('Event categories', 'mp-timetable')}
@@ -254,7 +257,7 @@ class Inspector extends Component {
 						]}
 					/>
 					<SelectControl
-						label={__('Table layout', 'mp-timetable')}
+						label={__('Column width', 'mp-timetable')}
 						value={table_layout}
 						onChange={table_layout => setAttributes({ table_layout })}
 						options={[

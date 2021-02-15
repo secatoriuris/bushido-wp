@@ -274,7 +274,7 @@ class A_NextGen_Basic_Slideshow_Controller extends Mixin
     {
         wp_enqueue_style('ngg_basic_slideshow_style', $this->get_static_url('photocrati-nextgen_basic_gallery#slideshow/ngg_basic_slideshow.css'), array(), NGG_SCRIPT_VERSION);
         // Add new scripts for slick based slideshow
-        wp_enqueue_script('ngg_slick', $this->get_static_url("photocrati-nextgen_basic_gallery#slideshow/slick/slick.min.js"), array('jquery'), NGG_SCRIPT_VERSION);
+        wp_enqueue_script('ngg_slick', $this->get_static_url("photocrati-nextgen_basic_gallery#slideshow/slick/slick-1.8.0-modded.js"), array('jquery'), NGG_SCRIPT_VERSION);
         wp_enqueue_style('ngg_slick_slideshow_style', $this->get_static_url('photocrati-nextgen_basic_gallery#slideshow/slick/slick.css'), array(), NGG_SCRIPT_VERSION);
         wp_enqueue_style('ngg_slick_slideshow_theme', $this->get_static_url('photocrati-nextgen_basic_gallery#slideshow/slick/slick-theme.css'), array(), NGG_SCRIPT_VERSION);
         $this->call_parent('enqueue_frontend_resources', $displayed_gallery);
@@ -582,6 +582,21 @@ class A_NextGen_Basic_Thumbnails_Controller extends Mixin
                 $output = $this->object->legacy_render($display_settings['template'], $params, $return, 'gallery');
             } else {
                 $params = $display_settings;
+                // Additional values for the carousel display view
+                if (!empty($this->param('pid'))) {
+                    foreach ($images as $image) {
+                        if ($image->image_slug === $this->param('pid')) {
+                            $params['current_image'] = $image;
+                        }
+                    }
+                    if ($pagination_result) {
+                        $params['pagination_prev'] = $pagination_result['prev'];
+                        $params['pagination_next'] = $pagination_result['next'];
+                    }
+                }
+                if (empty($params['current_image'])) {
+                    $params['current_image'] = reset($images);
+                }
                 $params['storage'] =& $storage;
                 $params['images'] =& $images;
                 $params['displayed_gallery_id'] = $gallery_id;

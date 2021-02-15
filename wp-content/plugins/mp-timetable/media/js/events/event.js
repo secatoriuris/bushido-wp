@@ -624,7 +624,7 @@ Registry.register("Event",
 						max = nextEventIndex;
 					}
 
-					var rowSpan = 1;
+					var rowSpan = (max - min);
 
 					return rowSpan < 1 ? 1 : rowSpan;
 				},
@@ -822,7 +822,7 @@ Registry.register("Event",
 						if (row.length) {
 
 							if (row.find('td.event[data-column-id="' + columnId + '"]').length) {
-								rowSpan = 1;
+								rowSpan -= (toRowSpan - index);
 
 								if (rowSpan < 2) {
 									rowSpan = 1;
@@ -856,7 +856,7 @@ Registry.register("Event",
 
 							if (!_.isUndefined(rowSpan) && rowSpan > 1) {
 
-								rowSpan = 1;
+								rowSpan = state.removeCellsAfterChangeRowSpan(td, rowSpan, $table, columnId);
 
 								if (!isNaN(rowHeight)) {
 									td.css('height', rowSpan * rowHeight);

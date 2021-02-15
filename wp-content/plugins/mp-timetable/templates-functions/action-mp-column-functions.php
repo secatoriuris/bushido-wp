@@ -37,7 +37,7 @@ function mptt_column_template_content_events_list() {
 				<h4 class="event-title">
 					<a href="<?php echo $event->post->timetable_disable_url == '1' ? '#' : ($event->post->timetable_custom_url != "" ? $event->post->timetable_custom_url : get_permalink($event->event_id)) ?>"
 					   class="event-link">
-						<?php echo get_the_title($event->event_id); ?> blabl
+						<?php echo get_the_title($event->event_id); ?>
 					</a>
 				</h4>
 

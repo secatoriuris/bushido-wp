@@ -575,26 +575,19 @@ class Mixin_Display_Type_Controller extends Mixin
             $fs = C_Fs::get_instance();
             /* Fetch array of template directories */
             $dirs = M_Gallery_Display::get_display_type_view_dirs($display_type_name);
-            // If the view starts with a slash, we assume that a filename has been given
-            if (strpos($display_type_view, DIRECTORY_SEPARATOR) === 0) {
-                if (@file_exists($display_type_view)) {
-                    $template = $display_type_view;
-                }
-            } else {
-                // Add the missing "default" category name prefix to the template to make it
-                // more consistent to evaluate
-                if (strpos($display_type_view, DIRECTORY_SEPARATOR) === FALSE) {
-                    $display_type_view = join(DIRECTORY_SEPARATOR, array('default', $display_type_view));
-                }
-                foreach ($dirs as $category => $dir) {
-                    $category = preg_quote($category . DIRECTORY_SEPARATOR);
-                    if (preg_match("#^{$category}(.*)\$#", $display_type_view, $match)) {
-                        $display_type_view = $match[1];
-                        $template_abspath = $fs->join_paths($dir, $display_type_view);
-                        if (@file_exists($template_abspath)) {
-                            $template = $template_abspath;
-                            break;
-                        }
+            // Add the missing "default" category name prefix to the template to make it
+            // more consistent to evaluate
+            if (strpos($display_type_view, DIRECTORY_SEPARATOR) === FALSE) {
+                $display_type_view = join(DIRECTORY_SEPARATOR, array('default', $display_type_view));
+            }
+            foreach ($dirs as $category => $dir) {
+                $category = preg_quote($category . DIRECTORY_SEPARATOR);
+                if (preg_match("#^{$category}(.*)\$#", $display_type_view, $match)) {
+                    $display_type_view = $match[1];
+                    $template_abspath = $fs->join_paths($dir, $display_type_view);
+                    if (@file_exists($template_abspath)) {
+                        $template = $template_abspath;
+                        break;
                     }
                 }
             }
@@ -805,8 +798,8 @@ class Mixin_Displayed_Gallery_Validation extends Mixin
                     $this->object->add_error(__('Source not compatible with selected display type', 'nggallery'), 'display_type');
                 }
             }
-            // Allow ONLY recent & random galleries to have their own maximum_entity_count
-            if (!empty($this->object->display_settings['maximum_entity_count']) && in_array($this->object->source, array('random_images', 'recent_images', 'random', 'recent'))) {
+            // Only some sources should have their own maximum_entity_count
+            if (!empty($this->object->display_settings['maximum_entity_count']) && in_array($this->object->source, array('tag', 'tags', 'random_images', 'recent_images', 'random', 'recent'))) {
                 $this->object->maximum_entity_count = $this->object->display_settings['maximum_entity_count'];
             }
             // If no maximum_entity_count has been given, then set a maximum
@@ -1123,7 +1116,11 @@ class Mixin_Displayed_Gallery_Queries extends Mixin
             $container_ids = $this->object->container_ids;
             if ($container_ids) {
                 if ($container_ids !== array('0') && $container_ids !== array('')) {
+                    $container_ids = array_map('intval', $container_ids);
                     $album_mapper->where(array("{$album_key} IN %s", $container_ids));
+                    // This order_by is necessary for albums to be ordered correctly given the WHERE .. IN() above
+                    $order_string = implode(',', $container_ids);
+                    $album_mapper->order_by("FIELD('id', {$order_string})");
                     foreach ($album_mapper->run_query() as $album) {
                         $entity_ids = array_merge($entity_ids, (array) $album->sortorder);
                     }
@@ -2144,10 +2141,10 @@ class C_Displayed_Gallery_Source_Manager
                 $retval[] = $source_obj;
             }
         }
-        usort($retval, array(&$this, '__sort_by_name'));
+        usort($retval, array($this, '_sort_by_name'));
         return $retval;
     }
-    function __sort_by_name($a, $b)
+    function _sort_by_name($a, $b)
     {
         return strcmp($a->name, $b->name);
     }
