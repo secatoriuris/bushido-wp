@@ -4,7 +4,7 @@ if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) { die('You 
 /**
  * Plugin Name: NextGEN Gallery
  * Description: The most popular gallery plugin for WordPress and one of the most popular plugins of all time with over 30 million downloads.
- * Version: 3.6.0
+ * Version: 3.9.0
  * Author: Imagely
  * Plugin URI: https://www.imagely.com/wordpress-gallery-plugin/nextgen-gallery/
  * Author URI: https://www.imagely.com
@@ -214,7 +214,7 @@ class C_NextGEN_Bootstrap
 		// Load the installer
 		include_once('non_pope/class.photocrati_installer.php');
 
-		// Load the resource manager
+		// Load the (mostly deprecated) resource manager
 		include_once('non_pope/class.photocrati_resource_manager.php');
 		C_Photocrati_Resource_Manager::init();
 
@@ -466,20 +466,6 @@ class C_NextGEN_Bootstrap
 		}
 
 		add_action('all_admin_notices', [$this, 'render_jquery_wp_55_warning']);
-
-		add_filter('ngg_load_frontend_logic', array($this, 'disable_frontend_logic'), -10, 2);
-
-	}
-
-	function disable_frontend_logic($enabled, $module_id)
-	{
-		if (is_admin())
-		{
-			$settings = C_NextGen_Settings::get_instance();
-			if (!$settings->get('always_enable_frontend_logic'))
-				$enabled = FALSE;
-		}
-		return $enabled;
 	}
 
 	function handle_activation_redirect()
@@ -726,7 +712,7 @@ class C_NextGEN_Bootstrap
 		define('NGG_PRODUCT_URL', path_join(str_replace("\\" , '/', NGG_PLUGIN_URL), 'products'));
 		define('NGG_MODULE_URL', path_join(str_replace("\\", '/', NGG_PRODUCT_URL), 'photocrati_nextgen/modules'));
 		define('NGG_PLUGIN_STARTED_AT', microtime());
-		define('NGG_PLUGIN_VERSION', '3.6.0');
+		define('NGG_PLUGIN_VERSION', '3.9.0');
 
 		define(
 			'NGG_SCRIPT_VERSION',

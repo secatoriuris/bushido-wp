@@ -2,8 +2,8 @@
 Donate link: http://helpiewp.com/
 Tags: faq, accordion, woocommerce faq, gutenberg faq, faq plugin, faq widget, faq schema, elementor, faq, accordions, toggle
 Requires at least: 5.4
-Tested up to: 5.6
-Stable tag: 1.5.1
+Tested up to: 5.7
+Stable tag: 1.5.3
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -165,7 +165,20 @@ Customize accordion by changing the header & body backgrounds and their font sty
 
 == Changelog ==
 
-= 1.5 =
+= 1.5.3 =
+Fix: Switch off the default faq limit in settings
+Fix: User engagement mode displays zero faqs when Insights have no value
+Fix: Global search should not bring faq post type results
+Enhancement: Added a string for empty faq results
+Fix: Console log shows errors if the search query includes any spaces
+Fix: Faq search filters only the first word in a sentence
+Fix: Empty string in the search bar throws a console error
+Fix: Clearing the string in the search box should bring back all faq's again.
+
+= 1.5.2 =
+Fix: Create FAQs using FAQ group is not getting added if Yoast seo plugin is active
+
+= 1.5.1 =
 Improvements: Helpie FAQ walkthrough steps updated.
 
 = 1.5 =

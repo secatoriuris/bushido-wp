@@ -116,11 +116,11 @@ if ( !class_exists( '\\HelpieFaq\\Includes\\Settings\\Fields' ) ) {
                 ),
                 array(
                     'id'         => 'limit',
-                    'type'       => 'text',
+                    'type'       => 'number',
                     'title'      => __( 'Limit ( number of items )', 'helpie-faq' ),
-                    'default'    => 5,
+                    'default'    => -1,
                     'attributes' => array(
-                    'min' => 1,
+                    'min' => -1,
                 ),
                     'info'       => __( 'Limit of the FAQ items', 'helpie-faq' ),
                 ),
@@ -137,6 +137,13 @@ if ( !class_exists( '\\HelpieFaq\\Includes\\Settings\\Fields' ) ) {
                     'title'   => __( 'FAQs Shows Products Only', 'helpie-faq' ),
                     'label'   => __( 'True / False ', 'helpie-faq' ),
                     'default' => false,
+                ),
+                array(
+                    'id'      => 'exclude_from_search',
+                    'type'    => 'switcher',
+                    'title'   => __( 'Exclude FAQ posts from WordPress Search', 'helpie-faq' ),
+                    'label'   => __( 'Enable / Disable ', 'helpie-faq' ),
+                    'default' => true,
                 ),
             );
             return $fields;

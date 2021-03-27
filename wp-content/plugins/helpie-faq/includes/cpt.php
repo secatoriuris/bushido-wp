@@ -14,12 +14,13 @@ if (!class_exists('\HelpieFaq\Includes\Cpt')) {
         /* Register post type in init Hook */
         public function register()
         {
-            
+
             add_action('init', array($this, 'register_post_type_with_taxonomy'));
             add_action('init', array($this, 'show_other_cpt_and_tax'));
 
-            $faq_groups = new \HelpieFaq\Features\Faq\Faq_Groups\Faq_Groups();
-            add_action('init', array($faq_groups, 'load_hooks'));
+            $faq_group_controller = new \HelpieFaq\Features\Faq_Group\Controller();
+            add_action('init', array($faq_group_controller, 'init'));
+
         }
 
         /* Register post type on activation hook cause can't call other filter and actions */
@@ -32,7 +33,6 @@ if (!class_exists('\HelpieFaq\Includes\Cpt')) {
         {
 
             $helpie_faq_model = new \HelpieFaq\Includes\Core\Helpie_Faq_Model();
-
 
             $labels = array(
                 'name' => _x('FAQs', 'post type general name', 'helpie-faq'),
@@ -57,7 +57,8 @@ if (!class_exists('\HelpieFaq\Includes\Cpt')) {
             );
 
             $cpt_slug = $helpie_faq_model->get_cpt_slug();
-            
+            $global_search_option = $helpie_faq_model->get_global_search_option();
+
             $args = array(
                 'labels' => $labels,
                 'public' => true,
@@ -68,7 +69,7 @@ if (!class_exists('\HelpieFaq\Includes\Cpt')) {
                 'map_meta_cap' => true,
                 'can_export' => true,
                 'has_archive' => true,
-                'exclude_from_search' => false,
+                'exclude_from_search' => $global_search_option, // enable/disable global site search
                 'supports' => array('title', 'editor', 'excerpt', 'custom-fields', 'comments', 'revisions', 'page-attributes', 'post-formats', 'thumbnail', 'author'),
                 'rewrite' => array('slug' => $cpt_slug, 'with_front' => false),
             );
@@ -139,7 +140,8 @@ if (!class_exists('\HelpieFaq\Includes\Cpt')) {
             register_taxonomy('helpie_faq_tag', array($this->post_type_name), $args);
         }
 
-        public function register_faq_group(){
+        public function register_faq_group()
+        {
             $labels = array(
                 'name' => _x('FAQ Groups', 'taxonomy general name', HELPIE_FAQ_DOMAIN),
                 'singular_name' => _x('FAQ Group', 'taxonomy singular name', HELPIE_FAQ_DOMAIN),
@@ -163,7 +165,7 @@ if (!class_exists('\HelpieFaq\Includes\Cpt')) {
                 'query_var' => true,
                 'parent_item' => null,
                 'parent_item_colon' => null,
-                'meta_box_cb'   => false,
+                'meta_box_cb' => false,
                 'rewrite' => array('slug' => 'helpie_faq_group', 'with_front' => false),
             );
 
@@ -216,6 +218,6 @@ if (!class_exists('\HelpieFaq\Includes\Cpt')) {
                 }
             }
         }
-        
+
     } // END CLASS
 }

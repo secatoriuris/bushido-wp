@@ -12,13 +12,17 @@ if (!class_exists('\Stylus\Components\Search')) {
     {
 
         public function __construct()
-        { }
+        {}
 
         public function get_view($props)
         {
             $html = '<form class="search" onSubmit="return false;">';
-            $html .= '<input type="text" class="search__input live-search-box" placeholder="' . $props['search_placeholder'] . '">';
+            $html .= '<div class="searchWrapper">';
+            $html .= '<input type="text" class="search__input" placeholder="' . $props['search_placeholder'] . '">';
             $html .= '<img class="search__icon" src="' . HELPIE_FAQ_URL . '/assets/img/search-icon.png">';
+            $html .= '</div>';
+            $html .= '<div class="searchEmptyWrapper">';
+            $html .= '</div>';
             $html .= '</form>';
 
             return $html;

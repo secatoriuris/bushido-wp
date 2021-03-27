@@ -70,9 +70,8 @@ if (!class_exists('\HelpieFaq\Includes\Repos\Faq_Repo')) {
             $term_args = array(
                 'parent' => 0,
                 'hide_empty' => false,
-                'order' => isset($args['order'])? $args['order']: 'desc' 
+                'order' => isset($args['order']) ? $args['order'] : 'desc',
             );
-
 
             if (isset($args['categories']) && !empty($args['categories'])) {
                 $category_is_all = is_array($args['categories']) && in_array('all', $args['categories']);
@@ -91,37 +90,10 @@ if (!class_exists('\HelpieFaq\Includes\Repos\Faq_Repo')) {
 
         public function sort($args)
         {
-            $wp_query_args = array();
-
-            if (isset($args['sortby'])) {
-                switch ($args['sortby']) {
-                    case "alphabetical":
-                        $wp_query_args['orderby'] = 'title';
-                        break;
-                    case "updated":
-                        $wp_query_args['orderby'] = 'modified';
-                        break;
-                    case "user_engagement":
-                        $wp_query_args['meta_key'] = 'click_counter';
-                        $wp_query_args['orderby'] = 'click_counter';
-                        $wp_query_args['order'] = 'DESC';
-                        break;
-                    case "menu_order":
-                        $wp_query_args['orderby'] = 'menu_order';
-                        // $wp_query_args['order'] = 'DESC';
-                    case "post__in":
-                        $wp_query_args['orderby'] = 'post__in';
-                        $wp_query_args['order'] = 'ASC';
-                    default:
-                        $wp_query_args['orderby'] = 'include';
-                        break;
-                }
-            }
-
-
-            return $wp_query_args;
+            $sort = new \HelpieFaq\Includes\Query\Sort();
+            $sortBy_args = $sort->get_sort_args($args);
+            return $sortBy_args;
         } // end sort()
-
 
         public function get_faq_categories_option($show_all = false)
         {
@@ -161,33 +133,33 @@ if (!class_exists('\HelpieFaq\Includes\Repos\Faq_Repo')) {
             }
         }
 
-        public function get_faqs_by_category($args){
-            
-            $category_id = isset($args['term_id']) && !empty($args['term_id']) ? $args['term_id']: 0;
-            
+        public function get_faqs_by_category($args)
+        {
 
-            $order = isset($args['order']) ? $args['order']: 'desc';
+            $category_id = isset($args['term_id']) && !empty($args['term_id']) ? $args['term_id'] : 0;
+
+            $order = isset($args['order']) ? $args['order'] : 'desc';
 
             $wp_query_args = $this->sort($args);
             $term_args = array_merge($wp_query_args, $args);
-            
+
             $post_args = array(
-                'post_type'		=> 'helpie_faq',
-                'numberposts'   => -1,
-                'order'         => $order,
+                'post_type' => 'helpie_faq',
+                'numberposts' => -1,
+                'order' => $order,
                 'tax_query' => array(
                     array(
-                        'taxonomy'  => 'helpie_faq_category',
-                        'field'     => 'term_id',
-                        'terms'     => $category_id,
-                        'include_children' => false 
-                    )
-                )
+                        'taxonomy' => 'helpie_faq_category',
+                        'field' => 'term_id',
+                        'terms' => $category_id,
+                        'include_children' => false,
+                    ),
+                ),
             );
 
-            $post_args = array_merge($term_args,$post_args);
-            
-            $result = get_posts( $post_args );
+            $post_args = array_merge($term_args, $post_args);
+
+            $result = get_posts($post_args);
 
             return $result;
         }

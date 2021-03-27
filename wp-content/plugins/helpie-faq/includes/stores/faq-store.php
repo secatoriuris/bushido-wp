@@ -21,49 +21,23 @@ if (!class_exists('\HelpieFaq\Includes\Store\Faq_Store')) {
             $this->filter_woo_products($args);
             $this->filter_product_only_faqs($args);
             $this->filter_faq_group_categories($args);
-            
+
         } // END filter()
 
         public function sort($args)
         {
+            $sort = new \HelpieFaq\Includes\Query\Sort();
+            $sort_args = $sort->get_sort_args($args);
+            $this->wp_query_args = array_merge($this->wp_query_args, $sort_args);
 
-            if (isset($args['sortby'])) {
-
-                // error_log(' sortby : ' . $args['sortby']);
-
-                switch ($args['sortby']) {
-                    case "alphabetical":
-                        $this->wp_query_args['orderby'] = 'title';
-                        break;
-                    case "updated":
-                        $this->wp_query_args['orderby'] = 'modified';
-                        break;
-                    case "user_engagement":
-                        $this->wp_query_args['meta_key'] = 'click_counter';
-                        $this->wp_query_args['orderby'] = 'click_counter';
-                        $this->wp_query_args['order'] = 'DESC';
-                        break;
-                    case "menu_order":
-                        $this->wp_query_args['orderby'] = 'menu_order';
-                        $this->wp_query_args['order'] = 'DESC';
-                        break;
-                    case "post__in":
-                        $this->wp_query_args['orderby'] = 'post__in';
-                        $this->wp_query_args['order'] = 'ASC';
-                        break;
-                    default:
-                        $this->wp_query_args['orderby'] = 'include';
-                        break;
-                }
-            }
         } // end sort()
 
         /* PROTECTED METHODS */
 
         protected function filter_faq_categories($args)
         {
-            if (isset($args['categories']) && $args['categories'] != 'all' 
-                && (!isset($args['group_id']) && empty($args['group_id'])) ) {
+            if (isset($args['categories']) && $args['categories'] != 'all'
+                && (!isset($args['group_id']) && empty($args['group_id']))) {
                 // Because Elementor gives array but shortcode and widgets give string
                 $terms_array = $this->to_array($args['categories']);
                 $this->add_tax_query('helpie_faq_category', $terms_array);
@@ -111,12 +85,11 @@ if (!class_exists('\HelpieFaq\Includes\Store\Faq_Store')) {
             }
         }
 
-        protected function filter_product_only_faqs($args){
-            
+        protected function filter_product_only_faqs($args)
+        {
 
-            if (empty(is_singular('product')) && 
-                ( isset($args['product_only']) && ($args['product_only'] === 'on' || $args['product_only']  === true || $args['product_only'] == 1)))
-                {
+            if (empty(is_singular('product')) &&
+                (isset($args['product_only']) && ($args['product_only'] === 'on' || $args['product_only'] === true || $args['product_only'] == 1))) {
 
                 $this->add_product_only_query('helpie_woo_metabox');
             }
@@ -145,7 +118,6 @@ if (!class_exists('\HelpieFaq\Includes\Store\Faq_Store')) {
                 ),
             );
         }
-        
 
         protected function add_product_only_query($key)
         {
@@ -159,22 +131,26 @@ if (!class_exists('\HelpieFaq\Includes\Store\Faq_Store')) {
             );
         }
 
-        protected function filter_faq_group_categories($args){
-            if(isset($args['group_id']) && !empty($args['group_id']) ) {
-                // Get PostsIds from faq group
-                $faq_groups = new \HelpieFaq\Features\Faq\Faq_Groups\Faq_Groups();
-                $post_ids = $faq_groups->get_post_ids_from_faq_group($args);
-                
-                // Recevied Empty post_ids , then set array value as 0
-                if(empty($post_ids)){
-                    $post_ids = array(0);
-                }
-                
-                $terms_array = $this->to_array($args['group_id']);
-                // add tax query and post_ids
-                $this->add_tax_query('helpie_faq_group', $terms_array);
-                $this->wp_query_args['post__in'] = $post_ids;
+        protected function filter_faq_group_categories($args)
+        {
+            if (!isset($args['group_id']) || empty($args['group_id'])) {
+                return;
             }
+
+            // Get PostsIds from faq group
+            $faq_group_repository = new \HelpieFaq\Includes\Repos\Faq_Group();
+            $post_ids = $faq_group_repository->get_post_ids_from_faq_group($args);
+
+            // Recevie empty post_ids, then set array value as 0
+            if (empty($post_ids)) {
+                $post_ids = array(0);
+            }
+
+            $terms_array = $this->to_array($args['group_id']);
+            // add tax query and post_ids
+            $this->add_tax_query('helpie_faq_group', $terms_array);
+            $this->wp_query_args['post__in'] = $post_ids;
+
         }
         /**
          *

@@ -595,6 +595,18 @@ class Mixin_Display_Type_Controller extends Mixin
         /* Return template. If no match is found, returns the original template */
         return $template;
     }
+    /**
+     * The basic thumbnails and slideshow have options to display galleries with the other display type, and albums
+     * of course display child of an entirely different kind. Implementing this method allows displays to alter
+     * the displayed gallery passed to their index_action() method.
+     *
+     * @param C_Displayed_Gallery $displayed_gallery
+     * @return C_Displayed_Gallery mixed
+     */
+    function get_alternate_displayed_gallery($displayed_gallery)
+    {
+        return $displayed_gallery;
+    }
 }
 /**
  * Provides a datamapper to perform CRUD operations for Display Types
@@ -1700,6 +1712,15 @@ class Mixin_Displayed_Gallery_Renderer extends Mixin
         $displayed_gallery = NULL;
         // Get the NextGEN settings to provide some defaults
         $settings = C_NextGen_Settings::get_instance();
+        // Perform some conversions...
+        if (isset($params['galleries'])) {
+            $params['gallery_ids'] = $params['galleries'];
+            unset($params['galleries']);
+        }
+        if (isset($params['albums'])) {
+            $params['album_ids'] = $params['albums'];
+            unset($params['albums']);
+        }
         // Configure the arguments
         $defaults = array('id' => NULL, 'ids' => NULL, 'source' => '', 'src' => '', 'container_ids' => array(), 'gallery_ids' => array(), 'album_ids' => array(), 'tag_ids' => array(), 'display_type' => '', 'display' => '', 'exclusions' => array(), 'order_by' => $settings->galSort, 'order_direction' => $settings->galSortOrder, 'image_ids' => array(), 'entity_ids' => array(), 'tagcloud' => FALSE, 'returns' => 'included', 'slug' => NULL, 'sortorder' => array());
         $args = shortcode_atts($defaults, $params, 'ngg');
@@ -1710,7 +1731,6 @@ class Mixin_Displayed_Gallery_Renderer extends Mixin
             unset($mapper);
             // no longer needed
         } else {
-            // Perform some conversions...
             // Galleries?
             if ($args['gallery_ids']) {
                 if ($args['source'] != 'albums' and $args['source'] != 'album') {
@@ -1932,8 +1952,11 @@ class Mixin_Displayed_Gallery_Renderer extends Mixin
         } elseif (!NGG_RENDERING_CACHE_ENABLED) {
             $lookup = FALSE;
         }
-        // Enqueue any necessary static resources
-        if ((!defined('NGG_SKIP_LOAD_SCRIPTS') || !NGG_SKIP_LOAD_SCRIPTS) && !$this->is_rest_request()) {
+        // Just in case M_Gallery_Display could not find this displayed gallery during wp_enqueue_scripts (most likely
+        // because this displayed gallery was created through do_shortcode) we'll enqueue it now. This may potentially
+        // cause issues with displays adding their JS or CSS after the <body> has began or finished.
+        if ((!defined('NGG_SKIP_LOAD_SCRIPTS') || !NGG_SKIP_LOAD_SCRIPTS) && !$this->is_rest_request() && !in_array($displayed_gallery->id(), M_Gallery_Display::$enqueued_displayed_gallery_ids)) {
+            M_Gallery_Display::$enqueued_displayed_gallery_ids[] = $displayed_gallery->id();
             $controller->enqueue_frontend_resources($displayed_gallery);
         }
         // Try cache lookup, if we're to do so
@@ -1975,7 +1998,6 @@ class Mixin_Displayed_Gallery_Renderer extends Mixin
         // If a cached version doesn't exist, then create the cache
         if (!$html) {
             $retval .= $this->debug_msg("Rendering displayed gallery");
-            $current_mode = $controller->get_render_mode();
             $controller->set_render_mode($mode);
             $html = apply_filters('ngg_displayed_gallery_rendering', $controller->index_action($displayed_gallery, TRUE), $displayed_gallery);
             if ($key != null) {
@@ -1994,6 +2016,9 @@ class Mixin_Displayed_Gallery_Renderer extends Mixin
     function is_rest_request()
     {
         return defined('REST_REQUEST') || strpos($_SERVER['REQUEST_URI'], 'wp-json') !== FALSE;
+    }
+    function do_app_rewrites($displayed_gallery)
+    {
     }
 }
 class C_Displayed_Gallery_Source_Manager

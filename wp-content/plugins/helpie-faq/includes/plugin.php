@@ -75,11 +75,6 @@ if ( !class_exists( '\\Helpie_FAQ' ) ) {
                 10,
                 3
             );
-            /** 
-             * Faq Groups Core Actions 
-             * edit,delete post actions
-             */
-            $faq_groups = new \HelpieFaq\Features\Faq\Faq_Groups\Core_Actions();
             // $Upgrades = new \HelpieFaq\Includes\Upgrades();
             \HelpieFaq\Includes\Upgrades::add_actions();
             /*  FAQ Settings */
@@ -95,8 +90,6 @@ if ( !class_exists( '\\Helpie_FAQ' ) ) {
         
         public function load_components()
         {
-            $faq_groups = new \HelpieFaq\Features\Faq\Faq_Groups\Faq_Groups();
-            $faq_groups->init();
             $insights = new \HelpieFaq\Features\Insights\Insights_Tease_Page();
             $this->shortcode_builder();
             // $this->load_update_handler();
@@ -263,13 +256,14 @@ if ( !class_exists( '\\Helpie_FAQ' ) ) {
                 'all'
             );
             $nonce = wp_create_nonce( 'helpie_faq_nonce' );
-            wp_localize_script( $this->plugin_domain . '-bundle', 'helpie_faq_nonce', $nonce );
-            wp_localize_script( $this->plugin_domain . '-bundle', 'my_faq_ajax_object', array(
+            $plan = 'free';
+            $helpie_faq_object = array(
+                'nonce'    => $nonce,
                 'ajax_url' => admin_url( 'admin-ajax.php' ),
-            ) );
-            wp_localize_script( $this->plugin_domain . '-bundle', 'Helpie_FAQ_URL', HELPIE_FAQ_URL );
-            $helpie_faq_plan = 'free';
-            wp_localize_script( $this->plugin_domain . '-bundle', 'helpie_faq_plan', $helpie_faq_plan );
+                'plan'     => $plan,
+                'url'      => HELPIE_FAQ_URL,
+            );
+            wp_localize_script( $this->plugin_domain . '-bundle', 'helpie_faq_object', $helpie_faq_object );
             // You Can Access these object from javascript
             $faq_strings = new \HelpieFaq\Languages\FAQ_Strings();
             $loco_strings = $faq_strings->get_strings();

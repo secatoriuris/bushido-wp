@@ -141,8 +141,8 @@ Text Domain:	 bushido
     h2, h3, h4, h5, h6 {
         color: unset; 
     }
-
-    h2,.mec-single-title{
+    
+    h2,.mec-single-title, h3.collection-title{
         font: 700 60px/60px "Odachi", sans-serif;
         letter-spacing: 5px;
         padding-top: 80px;
@@ -151,6 +151,10 @@ Text Domain:	 bushido
     h3, figcaption{
         font: 700 21px/30px "Lato", sans-serif;
         text-transform: uppercase;
+    }
+
+    h3.collection-title{
+    	text-align: center;
     }
 
     /*Navbar*/
@@ -1017,13 +1021,16 @@ article.mec-single-event > .col-md-8{
 }*/
 
 .mptt-event-container:hover{
-    width: calc(260%)!important;
-    left: calc(-80%)!important;
-    top: calc(-88%)!important;
+    width: calc(200%)!important;
+    left: calc(-50%)!important;
     border: none!important;
     outline: 4px solid #000!important;
     padding-bottom: 5px;
-    min-height: calc(260% + 8px)!important;
+    height: calc(100px + 8px)!important;
+}
+
+.mptt-shortcode-event:last-child > .mptt-event-container:hover{
+	    left: calc(-100% - 2px)!important;
 }
 
 p.timeslot, p.event-description{
@@ -1057,4 +1064,21 @@ table.course-list{
 
 ul.mptt-navigation-tabs{
     text-align: center;
+}
+
+/*accordions*/
+.accordion__title, .accordion__body > p{
+	font-size: 21px;
+
+}
+.accordion__body{
+	padding: 25px 25px!important;
+}
+
+.mptt-event-container > .mptt-inner-event-content > p{
+	opacity: 0%;
+}
+
+.mptt-event-container:hover > .mptt-inner-event-content > p{
+	opacity: 100%;
 }

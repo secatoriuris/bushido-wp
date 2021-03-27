@@ -33,7 +33,7 @@ if (!class_exists('\Stylus\Components\Accordion')) {
             $html = '';
 
             for ($ii = 0; $ii < sizeof($props); $ii++) {
-                $html .= "<h3>" . $props[$ii]['title'] . "</h3>";
+                $html .= "<h3 class='accordion__heading'>" . $props[$ii]['title'] . "</h3>";
                 $html .= $this->get_accordion($props[$ii]['children'],$collectionProps);
             }
 

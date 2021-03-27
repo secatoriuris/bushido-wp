@@ -56,8 +56,12 @@ class Admin
 
         $nonce = wp_create_nonce('helpie_faq_nonce');
 
-        wp_localize_script($this->plugin_domain . '-bundle-admin-scripts', 'helpie_faq_nonce', $nonce);
-        wp_localize_script($this->plugin_domain . '-bundle-admin-scripts', 'my_faq_ajax_object', array('ajax_url' => admin_url('admin-ajax.php')));
+        $helpie_faq_object = array(
+            'nonce' => $nonce,
+            'ajax_url' => admin_url('admin-ajax.php'),
+        );
+
+        wp_localize_script($this->plugin_domain . '-bundle-admin-scripts', 'helpie_faq_object', $helpie_faq_object);
 
         wp_enqueue_style($this->plugin_domain . '-magnific-popup-styles', HELPIE_FAQ_URL . 'assets/libs/magnific-popup/magnific-popup.css', array(), $this->version, 'all');
         wp_enqueue_script($this->plugin_domain . '-magnific-popup-scripts', HELPIE_FAQ_URL . 'assets/libs/magnific-popup/jquery.magnific-popup.min.js', array('jquery'), $this->version, 'all');
